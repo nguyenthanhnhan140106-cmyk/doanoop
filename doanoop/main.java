@@ -7,9 +7,9 @@ public class main {
         Scanner sc = new Scanner(System.in);
         quanlyChucNang m = new quanlyChucNang();
         DanhSachHangHoa a = new DanhSachHangHoa();
-        m.a.docFile("D:\\java\\javacoban\\src\\doanoop\\danhsachsanpham.txt");
+        m.a.docFile("danhsachsanpham.txt");
         DanhSachNhanVien b=new DanhSachNhanVien();
-        m.b.docFile("D:\\java\\javacoban\\src\\doanoop\\danhsachnhanvien.txt");
+        m.b.docFile("danhsachnhanvien.txt");
         int chon;
 
         do {
@@ -40,15 +40,15 @@ public class main {
                         switch (lc1) {
                             case 1:
                                 m.themDShanghoa();
-                                m.a.ghiFile("D:\\java\\javacoban\\src\\doanoop\\danhsachsanpham.txt");
+                                m.a.ghiFile("danhsachsanpham.txt");
                                 break;
                             case 2:
                                 m.xoaSanPham();
-                                m.a.ghiFile("D:\\java\\javacoban\\src\\doanoop\\danhsachsanpham.txt");
+                                m.a.ghiFile("danhsachsanpham.txt");
                                 break;
                             case 3:
                                 m.suaDSsanpham();
-                                m.a.ghiFile("D:\\java\\javacoban\\src\\doanoop\\danhsachsanpham.txt");
+                                m.a.ghiFile("danhsachsanpham.txt");
                                 break;
                             case 4:
                                 m.timKiemSanPham();
@@ -111,15 +111,15 @@ public class main {
                         switch (lc2) {
                             case 1:
                                 m.themNhanVien();
-                                m.b.ghiFile("D:\\java\\javacoban\\src\\doanoop\\danhsachnhanvien.txt");
+                                m.b.ghiFile("danhsachnhanvien.txt");
                                 break;
                             case 2:
                                 m.xoaNhanVien();
-                                m.b.ghiFile("D:\\java\\javacoban\\src\\doanoop\\danhsachnhanvien.txt");
+                                m.b.ghiFile("danhsachnhanvien.txt");
                                 break;
                             case 3:
                                 m.suaDSNhanVien();
-                                m.b.ghiFile("D:\\java\\javacoban\\src\\doanoop\\danhsachnhanvien.txt");
+                                m.b.ghiFile("danhsachnhanvien.txt");
                                 break;
                             case 4:
                                 m.timKiemNhanVien();
