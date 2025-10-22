@@ -1,0 +1,4 @@
+MãNV: FT001, Tên: Nguyễn Văn A, Email: abcd@gmail.com, SĐT: 03384746, SốGiờLàm: 9, Lương: 270.0
+MãNV: PT003, Tên: Nguyễn Văn B, Email: hjsgd@gmail.com, SĐT: 099037632, SốGiờLàm: 9, Lương: 225.0
+MãNV: PT004, Tên: nguyenvana, Email: kdshkvdas, SĐT: 0982371, SốGiờLàm: 5, Lương: 125.0
+MãNV: FT010, Tên: cua, Email: kjahdva, SĐT: 09248, SốGiờLàm: 2, Lương: 60.0
