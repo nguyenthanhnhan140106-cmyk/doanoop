@@ -1,6 +1,8 @@
 package doanoop;
 
 public interface chucNang {
+    void menu();
+    void subMenu();
     void themDShanghoa();
     void suaDSsanpham();
     void timKiemSanPham();

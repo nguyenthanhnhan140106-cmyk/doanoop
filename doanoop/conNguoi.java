@@ -16,7 +16,7 @@ public class conNguoi {
         return id;
     }
     public void setid(String id){
-        this.id=this.id;
+        this.id=id;
     }
     public String getten(){
         return ten;

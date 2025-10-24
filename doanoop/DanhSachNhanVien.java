@@ -1,6 +1,7 @@
 package doanoop;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -12,18 +13,12 @@ public class DanhSachNhanVien{
 
     public void docFile(String tenFile) {
         try {
-            File f = new File(tenFile);
-            if (!f.exists()) {
-                System.out.println("File không tồn tại");
-                return;
-            }
-
-            BufferedReader input = new BufferedReader(new FileReader(f));
+            BufferedReader input = new BufferedReader(new FileReader(tenFile));
             String line;
 
             while ((line = input.readLine()) != null) {
                 if (line.trim().isEmpty()) continue;
-                String[] arr = line.split(",");
+                String[] arr = line.split("\\|\\|");
 
                 String id = arr[0].split(":")[1].trim();
                 String ten = arr[1].split(":")[1].trim();
@@ -36,7 +31,9 @@ public class DanhSachNhanVien{
                 else
                     nv = new nvFulltime(id, ten, email , sdt ,soGioLam);
                 a.add(nv);
+                
             }
+            input.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -45,7 +42,7 @@ public class DanhSachNhanVien{
 
     public void ghiFile(String tenFile) {
         try {
-            FileWriter fw = new FileWriter(tenFile);
+            BufferedWriter fw = new BufferedWriter(new FileWriter(tenFile));
             for (nhanVien x : a) {
                 fw.write(x.toString());
                 fw.write("\n");
@@ -111,7 +108,6 @@ public class DanhSachNhanVien{
                 System.out.println("Nhập số điện thoại liên hệ: ");
                 String sdt=sc.nextLine();
 
-                sc.nextInt();
                 System.out.println("Nhập số giờ làm việc: ");
                 int soGioLam=sc.nextInt();
 

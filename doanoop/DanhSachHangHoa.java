@@ -1,7 +1,7 @@
 package doanoop;
 
 import java.io.BufferedReader;
-import java.io.File;
+import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -12,18 +12,12 @@ public class DanhSachHangHoa{
 
     public void docFile(String tenFile) {
         try {
-            File f = new File(tenFile);
-            if (!f.exists()) {
-                System.out.println("File không tồn tại");
-                return;
-            }
 
-            BufferedReader input = new BufferedReader(new FileReader(f));
+            BufferedReader input = new BufferedReader(new FileReader(tenFile));
             String line;
-
             while ((line = input.readLine()) != null) {
                 if (line.trim().isEmpty()) continue;
-                String[] arr = line.split(",");
+                String[] arr = line.split("\\|\\|");
 
                 String ma = arr[0].split(":")[1].trim();
                 String tensp = arr[1].split(":")[1].trim();
@@ -39,8 +33,11 @@ public class DanhSachHangHoa{
                 else
                     hh = new Loa(ma, tensp, ngay, dg, sl, nsx);
                 a.add(hh);
+                
             }
+            input.close();
         } catch (Exception e) {
+            System.out.println("File không tồn tại");   
             e.printStackTrace();
         }
     }
@@ -48,7 +45,7 @@ public class DanhSachHangHoa{
 
     public void ghiFile(String tenFile) {
         try {
-            FileWriter fw = new FileWriter(tenFile);
+            BufferedWriter fw = new BufferedWriter(new FileWriter(tenFile));
             for (hangHoa x : a) {
                 fw.write(x.toString());
                 fw.write("\n");
