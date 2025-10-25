@@ -55,6 +55,6 @@ public class hangHoa {
     }
     @Override
     public String toString(){
-        return "Mã Hàng: "+maHang+", Tên SP: "+tenSP+", Ngày Nhập: "+ngayNhap+", Đơn giá: "+donGia+", Số Lượng: "+soLuong+ ", Nơi sản xuất: "+nsx;
+        return "Mã Hàng: "+maHang+"|| Tên SP: "+tenSP+"|| Ngày Nhập: "+ngayNhap+"|| Đơn giá: "+donGia+"|| Số Lượng: "+soLuong+ "|| Nơi sản xuất: "+nsx;
     }
 }

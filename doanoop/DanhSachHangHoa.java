@@ -55,27 +55,116 @@ public class DanhSachHangHoa{
             e.printStackTrace();
         }
     }
+    private boolean leapYear(int year){
+        return (year % 4 ==0 && year % 100 != 0) || (year % 400 ==0);
+    }
+    private boolean checkDate(String date){
+        if (!date.matches("\\d{4}-\\d{2}-\\d{2}")){
+            return false;
+        }
+        try{
+            String[] parts= date.split("-");
+            int year= Integer.parseInt(parts[0]);
+            int month= Integer.parseInt(parts[1]);
+            int day= Integer.parseInt(parts[2]);
+            // 1-12 in month
+            if (month <1 || month >12){
+                return false;
+            }
+            int[] daysInMonth={31,28,31,30,31,30,31,31,30,31,30,31};
+            if (leapYear(year)){
+                daysInMonth[1]=29;
+            }
+            // 1-31, if Feb then 1-28 (leap year is 1-29)
+            if (day <1 || day> daysInMonth[month-1]){
+                return false;
+            }
 
+            return true;
+        } catch (Exception e){
+            return false;
+        }
+    }
 
     public void themDSHangHoa(){
         Scanner sc=new Scanner(System.in);
         System.out.println("Nếu là Điện Thoại thì mã sản phẩm bắt đầu là DT, Laptop là LT, Loa là LO! ");
-        System.out.println("Nhập mã sản phẩm: ");
-        String maHang=sc.nextLine();
+        String maHang="";
+        while (true){
+            System.out.println("Nhập mã sản phẩm: ");
+            maHang = sc.nextLine().trim();
+            if (maHang.isEmpty()){
+                System.out.println("Mã sản phẩm không được để trống!");
+                continue;
+            }
+            boolean exists=false;
+            for (hangHoa hh:a){
+                if (hh.getmaHang().equalsIgnoreCase(maHang)){
+                    exists=true;
+                    break;
+                }
+            }
+            if (exists){
+                System.out.println("Tồn tại mã sản phẩm "+maHang+", Vui lòng nhập lại!");
+                continue;
+            }
+            break;
+        }
 
         System.out.println("Nhập tên sản phẩm: ");
         String tenSp=sc.nextLine();
 
-        System.out.println("Nhập ngày nhập sản phẩm: ");
-        String ngayNhap=sc.nextLine();
+        String ngayNhap="";
+        while (true){
+            System.out.println("Nhập ngày nhập sản phẩm (YYYY-MM-DD): ");
+            ngayNhap=sc.nextLine().trim();
 
-        System.out.println("Nhập giá tiền: ");
-        double donGia=sc.nextInt();
+            if (checkDate(ngayNhap)){
+                break;
+            }
+            else{
+                System.out.println("Ngày nhập không hợp lệ!");
+            }
+        }
+        
 
-        System.out.println("Nhập số lượng sản phẩm: ");
-        int soluong=sc.nextInt();
+        double donGia = 0;
+        while (true) {
+            System.out.print("Nhập giá tiền: ");
+            try {
+                String input = sc.nextLine().trim();
+                donGia = Double.parseDouble(input);
+                
+                if (donGia <= 0) {
+                    System.out.println("Giá tiền phải lớn hơn 0!");
+                    continue;
+                }
+                
+                break; // Valid price
+            } catch (NumberFormatException e) {
+                System.out.println("Giá tiền phải là số! Vui lòng nhập lại.");
+            }
+        }
 
-        sc.nextLine();
+        
+        double soluong = 0;
+        while (true) {
+            System.out.print("Nhập số lượng sản phẩm: ");
+            try {
+                String input = sc.nextLine().trim();
+                soluong = Double.parseDouble(input);
+                
+                if (soluong <= 0) {
+                    System.out.println("Số lượng phải lớn hơn 0!");
+                    continue;
+                }
+                
+                break; // Valid quantity
+            } catch (NumberFormatException e) {
+                System.out.println("Số lượng phải là số! Vui lòng nhập lại.");
+            }
+        }
+
         System.out.println("Nhập nơi sản xuất: ");
         String nsx=sc.nextLine();
 

@@ -1,50 +1,51 @@
-Mã Hàng: DT07 || Tên SP: Oppo_FindX7 || Ngày Nhập: 2025-10-10 || Đơn giá: 18000.0 || Số Lượng: 7.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: DT08 || Tên SP: Nokia_XR21 || Ngày Nhập: 2025-10-11 || Đơn giá: 14500.0 || Số Lượng: 5.0 || Nơi sản xuất: PhanLan
-Mã Hàng: DT09 || Tên SP: Google_Pixel9 || Ngày Nhập: 2025-10-12 || Đơn giá: 27000.0 || Số Lượng: 6.0 || Nơi sản xuất: My
-Mã Hàng: DT10 || Tên SP: Huawei_P70 || Ngày Nhập: 2025-10-13 || Đơn giá: 19000.0 || Số Lượng: 8.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: LT07 || Tên SP: HP_Pavilion15 || Ngày Nhập: 2025-10-14 || Đơn giá: 20000.0 || Số Lượng: 5.0 || Nơi sản xuất: VietNam
-Mã Hàng: LT08 || Tên SP: MSI_Modern14 || Ngày Nhập: 2025-10-15 || Đơn giá: 23000.0 || Số Lượng: 4.0 || Nơi sản xuất: DaiLoan
-Mã Hàng: LT09 || Tên SP: Asus_Vivobook16 || Ngày Nhập: 2025-10-16 || Đơn giá: 21000.0 || Số Lượng: 7.0 || Nơi sản xuất: VietNam
-Mã Hàng: LT10 || Tên SP: Lenovo_Legion7 || Ngày Nhập: 2025-10-17 || Đơn giá: 34000.0 || Số Lượng: 3.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: LO07 || Tên SP: Sony_SRSXB13 || Ngày Nhập: 2025-10-18 || Đơn giá: 5000.0 || Số Lượng: 12.0 || Nơi sản xuất: Nhat
-Mã Hàng: LO08 || Tên SP: JBL_Charge5 || Ngày Nhập: 2025-10-19 || Đơn giá: 8500.0 || Số Lượng: 10.0 || Nơi sản xuất: My
-Mã Hàng: LO09 || Tên SP: Anker_Soundcore2 || Ngày Nhập: 2025-10-20 || Đơn giá: 6000.0 || Số Lượng: 8.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: LO10 || Tên SP: Harman_Kardon_Go || Ngày Nhập: 2025-10-21 || Đơn giá: 9500.0 || Số Lượng: 6.0 || Nơi sản xuất: My
-Mã Hàng: DH02 || Tên SP: Galaxy_Watch6 || Ngày Nhập: 2025-10-22 || Đơn giá: 10000.0 || Số Lượng: 9.0 || Nơi sản xuất: HanQuoc
-Mã Hàng: DH03 || Tên SP: Amazfit_GTR4 || Ngày Nhập: 2025-10-23 || Đơn giá: 8000.0 || Số Lượng: 10.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: DH04 || Tên SP: Huawei_WatchFit || Ngày Nhập: 2025-10-24 || Đơn giá: 7500.0 || Số Lượng: 11.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: TN02 || Tên SP: AirPods_Max || Ngày Nhập: 2025-10-25 || Đơn giá: 12000.0 || Số Lượng: 6.0 || Nơi sản xuất: My
-Mã Hàng: TN03 || Tên SP: Sony_WF1000XM5 || Ngày Nhập: 2025-10-26 || Đơn giá: 9500.0 || Số Lượng: 8.0 || Nơi sản xuất: Nhat
-Mã Hàng: TN04 || Tên SP: JBL_Tune130 || Ngày Nhập: 2025-10-27 || Đơn giá: 3500.0 || Số Lượng: 15.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: TN05 || Tên SP: Baseus_EncokW04 || Ngày Nhập: 2025-10-28 || Đơn giá: 2500.0 || Số Lượng: 18.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: TN06 || Tên SP: Beats_StudioBuds || Ngày Nhập: 2025-10-29 || Đơn giá: 9500.0 || Số Lượng: 10.0 || Nơi sản xuất: My
-Mã Hàng: TN07 || Tên SP: Edifier_X3 || Ngày Nhập: 2025-10-30 || Đơn giá: 3000.0 || Số Lượng: 20.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: TN08 || Tên SP: Sennheiser_Momentum3 || Ngày Nhập: 2025-10-31 || Đơn giá: 11000.0 || Số Lượng: 5.0 || Nơi sản xuất: Duc
-Mã Hàng: TN09 || Tên SP: Bose_QCII || Ngày Nhập: 2025-11-01 || Đơn giá: 13000.0 || Số Lượng: 4.0 || Nơi sản xuất: My
-Mã Hàng: DH05 || Tên SP: Garmin_Venu3 || Ngày Nhập: 2025-11-02 || Đơn giá: 13500.0 || Số Lượng: 5.0 || Nơi sản xuất: My
-Mã Hàng: DH06 || Tên SP: Xiaomi_Band9 || Ngày Nhập: 2025-11-03 || Đơn giá: 2500.0 || Số Lượng: 20.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: LT11 || Tên SP: Macbook_Pro16 || Ngày Nhập: 2025-11-04 || Đơn giá: 45000.0 || Số Lượng: 3.0 || Nơi sản xuất: My
-Mã Hàng: LT12 || Tên SP: Surface_Laptop6 || Ngày Nhập: 2025-11-05 || Đơn giá: 40000.0 || Số Lượng: 4.0 || Nơi sản xuất: My
-Mã Hàng: LT13 || Tên SP: Acer_Swift5 || Ngày Nhập: 2025-11-06 || Đơn giá: 23000.0 || Số Lượng: 6.0 || Nơi sản xuất: DaiLoan
-Mã Hàng: DT11 || Tên SP: Infinix_Note30 || Ngày Nhập: 2025-11-07 || Đơn giá: 7000.0 || Số Lượng: 9.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: DT12 || Tên SP: Tecno_Camon30 || Ngày Nhập: 2025-11-08 || Đơn giá: 8000.0 || Số Lượng: 8.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: DT13 || Tên SP: OnePlus12 || Ngày Nhập: 2025-11-09 || Đơn giá: 22000.0 || Số Lượng: 6.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: LO11 || Tên SP: UltimateEars_Boom3 || Ngày Nhập: 2025-11-10 || Đơn giá: 7500.0 || Số Lượng: 7.0 || Nơi sản xuất: My
-Mã Hàng: LO12 || Tên SP: LG_XBoomGo || Ngày Nhập: 2025-11-11 || Đơn giá: 6500.0 || Số Lượng: 9.0 || Nơi sản xuất: HanQuoc
-Mã Hàng: LO13 || Tên SP: Philips_BT6900 || Ngày Nhập: 2025-11-12 || Đơn giá: 5500.0 || Số Lượng: 10.0 || Nơi sản xuất: HaLan
-Mã Hàng: LO14 || Tên SP: Devialet_Mania || Ngày Nhập: 2025-11-13 || Đơn giá: 18000.0 || Số Lượng: 3.0 || Nơi sản xuất: Phap
-Mã Hàng: DH07 || Tên SP: Fitbit_Versa4 || Ngày Nhập: 2025-11-14 || Đơn giá: 9000.0 || Số Lượng: 8.0 || Nơi sản xuất: My
-Mã Hàng: DH08 || Tên SP: Amazfit_Bip5 || Ngày Nhập: 2025-11-15 || Đơn giá: 3500.0 || Số Lượng: 10.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: TN10 || Tên SP: SoundPeats_Capsule3 || Ngày Nhập: 2025-11-16 || Đơn giá: 2800.0 || Số Lượng: 16.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: TN11 || Tên SP: Nothing_Ear2 || Ngày Nhập: 2025-11-17 || Đơn giá: 4200.0 || Số Lượng: 13.0 || Nơi sản xuất: Anh
-Mã Hàng: TN12 || Tên SP: Xiaomi_RedmiBuds5 || Ngày Nhập: 2025-11-18 || Đơn giá: 2700.0 || Số Lượng: 19.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: TN13 || Tên SP: Marshall_MinorIII || Ngày Nhập: 2025-11-19 || Đơn giá: 9500.0 || Số Lượng: 6.0 || Nơi sản xuất: Anh
-Mã Hàng: TN14 || Tên SP: 1More_ComfoBuds2 || Ngày Nhập: 2025-11-20 || Đơn giá: 3200.0 || Số Lượng: 14.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: TN15 || Tên SP: Huawei_FreeBuds6 || Ngày Nhập: 2025-11-21 || Đơn giá: 5500.0 || Số Lượng: 10.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: DH09 || Tên SP: Coros_Pace3 || Ngày Nhập: 2025-11-22 || Đơn giá: 9800.0 || Số Lượng: 5.0 || Nơi sản xuất: My
-Mã Hàng: LO15 || Tên SP: Bose_PortableHome || Ngày Nhập: 2025-11-23 || Đơn giá: 12500.0 || Số Lượng: 4.0 || Nơi sản xuất: My
-Mã Hàng: LT14 || Tên SP: Dell_XPS15 || Ngày Nhập: 2025-11-24 || Đơn giá: 39000.0 || Số Lượng: 3.0 || Nơi sản xuất: My
-Mã Hàng: LT15 || Tên SP: Asus_Zenbook14 || Ngày Nhập: 2025-11-25 || Đơn giá: 25000.0 || Số Lượng: 5.0 || Nơi sản xuất: VietNam
-Mã Hàng: DT14 || Tên SP: Honor_Magic7 || Ngày Nhập: 2025-11-26 || Đơn giá: 17000.0 || Số Lượng: 7.0 || Nơi sản xuất: TrungQuoc
-Mã Hàng: DT15 || Tên SP: Sony_Xperia1V || Ngày Nhập: 2025-11-27 || Đơn giá: 28000.0 || Số Lượng: 4.0 || Nơi sản xuất: Nhat
-Mã Hàng: LT16 || Tên SP: Asus_Nitro5 || Ngày Nhập: 2025-11-02 || Đơn giá: 29000.0 || Số lượng: 4.0 || Nơi sản xuất: My
+Mã Hàng: DT07|| Tên SP: Oppo_FindX7|| Ngày Nhập: 2025-10-10|| Đơn giá: 18000.0|| Số Lượng: 7.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: DT08|| Tên SP: Nokia_XR21|| Ngày Nhập: 2025-10-11|| Đơn giá: 14500.0|| Số Lượng: 5.0|| Nơi sản xuất: PhanLan
+Mã Hàng: DT09|| Tên SP: Google_Pixel9|| Ngày Nhập: 2025-10-12|| Đơn giá: 27000.0|| Số Lượng: 6.0|| Nơi sản xuất: My
+Mã Hàng: DT10|| Tên SP: Huawei_P70|| Ngày Nhập: 2025-10-13|| Đơn giá: 19000.0|| Số Lượng: 8.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: LT07|| Tên SP: HP_Pavilion15|| Ngày Nhập: 2025-10-14|| Đơn giá: 20000.0|| Số Lượng: 5.0|| Nơi sản xuất: VietNam
+Mã Hàng: LT08|| Tên SP: MSI_Modern14|| Ngày Nhập: 2025-10-15|| Đơn giá: 23000.0|| Số Lượng: 4.0|| Nơi sản xuất: DaiLoan
+Mã Hàng: LT09|| Tên SP: Asus_Vivobook16|| Ngày Nhập: 2025-10-16|| Đơn giá: 21000.0|| Số Lượng: 7.0|| Nơi sản xuất: VietNam
+Mã Hàng: LT10|| Tên SP: Lenovo_Legion7|| Ngày Nhập: 2025-10-17|| Đơn giá: 34000.0|| Số Lượng: 3.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: LO07|| Tên SP: Sony_SRSXB13|| Ngày Nhập: 2025-10-18|| Đơn giá: 5000.0|| Số Lượng: 12.0|| Nơi sản xuất: Nhat
+Mã Hàng: LO08|| Tên SP: JBL_Charge5|| Ngày Nhập: 2025-10-19|| Đơn giá: 8500.0|| Số Lượng: 10.0|| Nơi sản xuất: My
+Mã Hàng: LO09|| Tên SP: Anker_Soundcore2|| Ngày Nhập: 2025-10-20|| Đơn giá: 6000.0|| Số Lượng: 8.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: LO10|| Tên SP: Harman_Kardon_Go|| Ngày Nhập: 2025-10-21|| Đơn giá: 9500.0|| Số Lượng: 6.0|| Nơi sản xuất: My
+Mã Hàng: DH02|| Tên SP: Galaxy_Watch6|| Ngày Nhập: 2025-10-22|| Đơn giá: 10000.0|| Số Lượng: 9.0|| Nơi sản xuất: HanQuoc
+Mã Hàng: DH03|| Tên SP: Amazfit_GTR4|| Ngày Nhập: 2025-10-23|| Đơn giá: 8000.0|| Số Lượng: 10.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: DH04|| Tên SP: Huawei_WatchFit|| Ngày Nhập: 2025-10-24|| Đơn giá: 7500.0|| Số Lượng: 11.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: TN02|| Tên SP: AirPods_Max|| Ngày Nhập: 2025-10-25|| Đơn giá: 12000.0|| Số Lượng: 6.0|| Nơi sản xuất: My
+Mã Hàng: TN03|| Tên SP: Sony_WF1000XM5|| Ngày Nhập: 2025-10-26|| Đơn giá: 9500.0|| Số Lượng: 8.0|| Nơi sản xuất: Nhat
+Mã Hàng: TN04|| Tên SP: JBL_Tune130|| Ngày Nhập: 2025-10-27|| Đơn giá: 3500.0|| Số Lượng: 15.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: TN05|| Tên SP: Baseus_EncokW04|| Ngày Nhập: 2025-10-28|| Đơn giá: 2500.0|| Số Lượng: 18.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: TN06|| Tên SP: Beats_StudioBuds|| Ngày Nhập: 2025-10-29|| Đơn giá: 9500.0|| Số Lượng: 10.0|| Nơi sản xuất: My
+Mã Hàng: TN07|| Tên SP: Edifier_X3|| Ngày Nhập: 2025-10-30|| Đơn giá: 3000.0|| Số Lượng: 20.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: TN08|| Tên SP: Sennheiser_Momentum3|| Ngày Nhập: 2025-10-31|| Đơn giá: 11000.0|| Số Lượng: 5.0|| Nơi sản xuất: Duc
+Mã Hàng: TN09|| Tên SP: Bose_QCII|| Ngày Nhập: 2025-11-01|| Đơn giá: 13000.0|| Số Lượng: 4.0|| Nơi sản xuất: My
+Mã Hàng: DH05|| Tên SP: Garmin_Venu3|| Ngày Nhập: 2025-11-02|| Đơn giá: 13500.0|| Số Lượng: 5.0|| Nơi sản xuất: My
+Mã Hàng: DH06|| Tên SP: Xiaomi_Band9|| Ngày Nhập: 2025-11-03|| Đơn giá: 2500.0|| Số Lượng: 20.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: LT11|| Tên SP: Macbook_Pro16|| Ngày Nhập: 2025-11-04|| Đơn giá: 45000.0|| Số Lượng: 3.0|| Nơi sản xuất: My
+Mã Hàng: LT12|| Tên SP: Surface_Laptop6|| Ngày Nhập: 2025-11-05|| Đơn giá: 40000.0|| Số Lượng: 4.0|| Nơi sản xuất: My
+Mã Hàng: LT13|| Tên SP: Acer_Swift5|| Ngày Nhập: 2025-11-06|| Đơn giá: 23000.0|| Số Lượng: 6.0|| Nơi sản xuất: DaiLoan
+Mã Hàng: DT11|| Tên SP: Infinix_Note30|| Ngày Nhập: 2025-11-07|| Đơn giá: 7000.0|| Số Lượng: 9.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: DT12|| Tên SP: Tecno_Camon30|| Ngày Nhập: 2025-11-08|| Đơn giá: 8000.0|| Số Lượng: 8.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: DT13|| Tên SP: OnePlus12|| Ngày Nhập: 2025-11-09|| Đơn giá: 22000.0|| Số Lượng: 6.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: LO11|| Tên SP: UltimateEars_Boom3|| Ngày Nhập: 2025-11-10|| Đơn giá: 7500.0|| Số Lượng: 7.0|| Nơi sản xuất: My
+Mã Hàng: LO12|| Tên SP: LG_XBoomGo|| Ngày Nhập: 2025-11-11|| Đơn giá: 6500.0|| Số Lượng: 9.0|| Nơi sản xuất: HanQuoc
+Mã Hàng: LO13|| Tên SP: Philips_BT6900|| Ngày Nhập: 2025-11-12|| Đơn giá: 5500.0|| Số Lượng: 10.0|| Nơi sản xuất: HaLan
+Mã Hàng: LO14|| Tên SP: Devialet_Mania|| Ngày Nhập: 2025-11-13|| Đơn giá: 18000.0|| Số Lượng: 3.0|| Nơi sản xuất: Phap
+Mã Hàng: DH07|| Tên SP: Fitbit_Versa4|| Ngày Nhập: 2025-11-14|| Đơn giá: 9000.0|| Số Lượng: 8.0|| Nơi sản xuất: My
+Mã Hàng: DH08|| Tên SP: Amazfit_Bip5|| Ngày Nhập: 2025-11-15|| Đơn giá: 3500.0|| Số Lượng: 10.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: TN10|| Tên SP: SoundPeats_Capsule3|| Ngày Nhập: 2025-11-16|| Đơn giá: 2800.0|| Số Lượng: 16.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: TN11|| Tên SP: Nothing_Ear2|| Ngày Nhập: 2025-11-17|| Đơn giá: 4200.0|| Số Lượng: 13.0|| Nơi sản xuất: Anh
+Mã Hàng: TN12|| Tên SP: Xiaomi_RedmiBuds5|| Ngày Nhập: 2025-11-18|| Đơn giá: 2700.0|| Số Lượng: 19.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: TN13|| Tên SP: Marshall_MinorIII|| Ngày Nhập: 2025-11-19|| Đơn giá: 9500.0|| Số Lượng: 6.0|| Nơi sản xuất: Anh
+Mã Hàng: TN14|| Tên SP: 1More_ComfoBuds2|| Ngày Nhập: 2025-11-20|| Đơn giá: 3200.0|| Số Lượng: 14.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: TN15|| Tên SP: Huawei_FreeBuds6|| Ngày Nhập: 2025-11-21|| Đơn giá: 5500.0|| Số Lượng: 10.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: DH09|| Tên SP: Coros_Pace3|| Ngày Nhập: 2025-11-22|| Đơn giá: 9800.0|| Số Lượng: 5.0|| Nơi sản xuất: My
+Mã Hàng: LO15|| Tên SP: Bose_PortableHome|| Ngày Nhập: 2025-11-23|| Đơn giá: 12500.0|| Số Lượng: 4.0|| Nơi sản xuất: My
+Mã Hàng: LT14|| Tên SP: Dell_XPS15|| Ngày Nhập: 2025-11-24|| Đơn giá: 39000.0|| Số Lượng: 3.0|| Nơi sản xuất: My
+Mã Hàng: LT15|| Tên SP: Asus_Zenbook14|| Ngày Nhập: 2025-11-25|| Đơn giá: 25000.0|| Số Lượng: 5.0|| Nơi sản xuất: VietNam
+Mã Hàng: DT14|| Tên SP: Honor_Magic7|| Ngày Nhập: 2025-11-26|| Đơn giá: 17000.0|| Số Lượng: 7.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: DT15|| Tên SP: Sony_Xperia1V|| Ngày Nhập: 2025-11-27|| Đơn giá: 28000.0|| Số Lượng: 4.0|| Nơi sản xuất: Nhat
+Mã Hàng: LT16|| Tên SP: Asus_Nitro5|| Ngày Nhập: 2025-11-02|| Đơn giá: 29000.0|| Số Lượng: 4.0|| Nơi sản xuất: My
+Mã Hàng: DT01|| Tên SP: kuuvovlog|| Ngày Nhập: 2025-12-05|| Đơn giá: 250000.0|| Số Lượng: 12.0|| Nơi sản xuất: tphcm
