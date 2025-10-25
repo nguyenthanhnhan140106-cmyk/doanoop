@@ -14,6 +14,7 @@ public abstract class nhanVien extends conNguoi{
     }
     public abstract double tinhLuong();
     public String toString() {
-        return "MãNV: " + id + "|| Tên: " + ten + "|| Email: " + email + "|| SĐT: " + sdt + "|| SốGiờLàm: " + soGioLam + "|| Lương: " + tinhLuong();
+        return "MãNV: " + id + " || Tên: " + ten + " || Email: " + email + " || SĐT: " + sdt + " || SốGiờLàm: " + soGioLam + " || Lương: " + tinhLuong();
     }
+    
 }

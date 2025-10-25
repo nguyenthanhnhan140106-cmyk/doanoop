@@ -1,5 +1,5 @@
-Mã Hàng: DT07|| Tên SP: Oppo_FindX7|| Ngày Nhập: 2025-10-10|| Đơn giá: 18000.0|| Số Lượng: 7.0|| Nơi sản xuất: TrungQuoc
-Mã Hàng: DT08|| Tên SP: Nokia_XR21|| Ngày Nhập: 2025-10-11|| Đơn giá: 14500.0|| Số Lượng: 5.0|| Nơi sản xuất: PhanLan
+Mã Hàng: DT07|| Tên SP: Oppo_FindX7|| Ngày Nhập: 2025-10-10|| Đơn giá: 18000.0|| Số Lượng: 0.0|| Nơi sản xuất: TrungQuoc
+Mã Hàng: DT08|| Tên SP: Nokia_XR21|| Ngày Nhập: 2025-10-11|| Đơn giá: 14500.0|| Số Lượng: 4.0|| Nơi sản xuất: PhanLan
 Mã Hàng: DT09|| Tên SP: Google_Pixel9|| Ngày Nhập: 2025-10-12|| Đơn giá: 27000.0|| Số Lượng: 6.0|| Nơi sản xuất: My
 Mã Hàng: DT10|| Tên SP: Huawei_P70|| Ngày Nhập: 2025-10-13|| Đơn giá: 19000.0|| Số Lượng: 8.0|| Nơi sản xuất: TrungQuoc
 Mã Hàng: LT07|| Tên SP: HP_Pavilion15|| Ngày Nhập: 2025-10-14|| Đơn giá: 20000.0|| Số Lượng: 5.0|| Nơi sản xuất: VietNam

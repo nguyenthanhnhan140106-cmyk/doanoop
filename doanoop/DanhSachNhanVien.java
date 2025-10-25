@@ -121,6 +121,14 @@ public class DanhSachNhanVien{
             }
         }
     }
+    public nhanVien timNhanVien(String ma){
+        for (nhanVien nv :a){
+            if (nv.getid().equalsIgnoreCase(ma)){
+                return nv;
+            }
+        }
+        return null;
+    }
     public void timKiemNhanVien() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Nhập mã sản phẩm cần tiềm: ");
@@ -128,7 +136,7 @@ public class DanhSachNhanVien{
 
         nhanVien nv = null;
         for (nhanVien X : a) {
-            if (X.getid().equals(id)) {
+            if (X.getid().equalsIgnoreCase(id)) {
                 nv = X;
                 break;
             }

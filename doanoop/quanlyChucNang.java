@@ -12,7 +12,8 @@ public class quanlyChucNang implements chucNang{
         a.docFile("doanoop/danhsachsanpham.txt");
         b.docFile("doanoop/danhsachnhanvien.txt");
 
-        
+        c.setDanhSachHangHoa(a);
+        c.setDanhSachNhanVien(b);
         int chon;
 
         do {
@@ -49,6 +50,7 @@ public class quanlyChucNang implements chucNang{
                     break;
                 case 0:
                     System.out.println("Thoát chương trình...");
+                    a.ghiFile("doanoop/danhsachsanpham.txt");
                     break;
                 default:
                     System.out.println("Lựa chọn không hợp lệ!");
@@ -82,15 +84,12 @@ public class quanlyChucNang implements chucNang{
             switch (lc1) {
                 case 1:
                     themDShanghoa();
-                    a.ghiFile("doanoop/danhsachsanpham.txt");
                     break;
                 case 2:
                     xoaSanPham();
-                    a.ghiFile("doanoop/danhsachsanpham.txt");
                     break;
                 case 3:
                     suaDSsanpham();
-                    a.ghiFile("doanoop/danhsachsanpham.txt");
                     break;
                 case 4:
                     timKiemSanPham();
@@ -133,15 +132,12 @@ public class quanlyChucNang implements chucNang{
             switch (lc2) {
                 case 1:
                     themNhanVien();
-                    b.ghiFile("doanoop/danhsachnhanvien.txt");
                     break;
                 case 2:
                     xoaNhanVien();
-                    b.ghiFile("doanoop/danhsachnhanvien.txt");
                     break;
                 case 3:
-                    suaDSNhanVien();
-                    b.ghiFile("doanoop/danhsachnhanvien.txt");
+                    suaDSNhanVien();b.ghiFile("doanoop/danhsachnhanvien.txt");
                     break;
                 case 4:
                     timKiemNhanVien();
@@ -288,6 +284,7 @@ public class quanlyChucNang implements chucNang{
     @Override
     public void muaHang() {
         c.muaHang();
+        a.ghiFile("doanoop/danhsachsanpham.txt");
     }
 
     @Override

@@ -67,6 +67,7 @@ public class DanhSachHangHoa{
             int year= Integer.parseInt(parts[0]);
             int month= Integer.parseInt(parts[1]);
             int day= Integer.parseInt(parts[2]);
+            if (year <1) return false;
             // 1-12 in month
             if (month <1 || month >12){
                 return false;
@@ -223,6 +224,13 @@ public class DanhSachHangHoa{
                 break;
             }
         }
+    }
+    public hangHoa timKiemMa(String ma){
+        for (hangHoa x :a ){
+            if (x.getmaHang().equalsIgnoreCase(ma)){
+                return x;
+            }
+        } return null;
     }
     public void timKiemSanPham() {
             Scanner sc = new Scanner(System.in);
