@@ -7,6 +7,8 @@ public class quanlyChucNang implements chucNang{
     DanhSachHangHoa a=new DanhSachHangHoa();
     DanhSachNhanVien b=new DanhSachNhanVien();
     muaHang c=new muaHang();
+
+    
     @Override
     public void menu(){
         a.docFile("doanoop/danhsachsanpham.txt");
@@ -51,6 +53,8 @@ public class quanlyChucNang implements chucNang{
                 case 0:
                     System.out.println("Thoát chương trình...");
                     a.ghiFile("doanoop/danhsachsanpham.txt");
+                    b.ghiFile("doanoop/danhsachnhanvien.txt");
+                    c.ghiHoaDon();
                     break;
                 default:
                     System.out.println("Lựa chọn không hợp lệ!");

@@ -1,61 +1,66 @@
 package doanoop;
 
-import java.util.ArrayList;
-import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class muaHang {
     private ArrayList<hoaDon> danhSachHoaDon = new ArrayList<>();
     private DanhSachHangHoa dshh;
     private DanhSachNhanVien dsnv;
+    private hoaDon hoaDonDangXuLy = null; // Lưu hóa đơn chưa thanh toán
 
     public muaHang() {
         this.dshh = new DanhSachHangHoa();
         this.dsnv = new DanhSachNhanVien();
     }
+    
     public void setDanhSachHangHoa(DanhSachHangHoa dshh) {
-        this.dshh=dshh;
+        this.dshh = dshh;
     }
-    public void setDanhSachNhanVien(DanhSachNhanVien dsnv){
-        this.dsnv=dsnv;
+    
+    public void setDanhSachNhanVien(DanhSachNhanVien dsnv) {
+        this.dsnv = dsnv;
     }
+    
     public void muaHang() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("\n=== Thông tin khách hàng ===");
-
-        System.out.print("Nhập mã khách hàng: ");
-        String id = sc.nextLine().trim();
-
-        System.out.print("Nhập tên khách hàng: ");
-        String ten = sc.nextLine().trim();
-
-        System.out.print("Nhập số điện thoại: ");
-        String sdt = sc.nextLine().trim();
-
-        System.out.print("Nhập email: ");
-        String email = sc.nextLine().trim();
-
-        khachHang kh = new khachHang(id, ten, email, sdt);
-
-        System.out.print("Nhập Mã NV phục vụ:");
-        String maNV= sc.nextLine().trim();
-        nhanVien nv= dsnv.timNhanVien(maNV);
-        if (nv == null) {
-            System.out.println("Không tìm thấy nhân viên có mã: " + maNV);
-            System.out.print("Tiếp tục mà không có nhân viên? (y or 0/n): ");
+        
+        hoaDon hd;
+        
+        // check if any receipt is in progress
+        if (hoaDonDangXuLy != null) {
+            System.out.println("\n=== Bạn có hóa đơn chưa hoàn thành ===");
+            System.out.println("Khách hàng: " + hoaDonDangXuLy.getKhachHang().toString());
+            System.out.println("Số sản phẩm trong giỏ: " + hoaDonDangXuLy.getDanhSachSanPham().size());
+            System.out.print("Tiếp tục mua hàng với hóa đơn này? (y/n): ");
             String choice = sc.nextLine().trim();
-            if (!choice.equalsIgnoreCase("y") || !choice.equalsIgnoreCase("0")) {
-                System.out.println("Hủy giao dịch.");
-                return;
+            
+            if (choice.equalsIgnoreCase("y")) {
+                hd = hoaDonDangXuLy; // Tiếp tục hóa đơn cũ
+                System.out.println("Tiếp tục mua hàng...");
+            } else {
+                System.out.print("Hủy hóa đơn cũ và tạo mới? (y/n): ");
+                String confirm = sc.nextLine().trim();
+                if (!confirm.equalsIgnoreCase("y")) {
+                    System.out.println("Quay lại menu...");
+                    return;
+                }
+                for (chiTietHoaDon ct : hoaDonDangXuLy.getDanhSachSanPham()) {
+                    hangHoa hh = ct.getSanPham();
+                    hh.setsoLuong(hh.getsoLuong() + ct.getSoLuong());
+                }
+                hoaDonDangXuLy = null;
+                hd = taoHoaDonMoi(sc); 
+                if (hd == null) return; 
             }
+        } else {
+            hd = taoHoaDonMoi(sc); 
+            if (hd == null) return; 
         }
-
- hoaDon hd = new hoaDon();
-        hd.setKhachHang(kh);
-        hd.setNhanVien(nv);
         
         System.out.println("\n--- MUA HÀNG ---");
         System.out.println("Nhập '0' để kết thúc mua hàng");
@@ -65,6 +70,7 @@ public class muaHang {
             String maSP = sc.nextLine().trim();
             
             if (maSP.equals("0")) {
+                System.out.println("Kết thúc phiên này");
                 break;
             }
             
@@ -72,20 +78,23 @@ public class muaHang {
                 System.out.println("Mã sản phẩm không được để trống!");
                 continue;
             }
+            
             hangHoa hh = dshh.timKiemMa(maSP);
             
             if (hh == null) {
                 System.out.println("Không tìm thấy sản phẩm có mã: " + maSP);
                 continue;
             }
-            if (hh.getsoLuong()<=0){
-                System.out.println("Sản phẩm "+hh.getTenSP()+" đã hết hàng");
-                System.out.println("Vui lòng nhập sản phẩm khác");
+            
+            if (hh.getsoLuong() <= 0) {
+                System.out.println("Sản phẩm " + hh.getTenSP() + " đã hết hàng!");
+                System.out.println("Vui lòng chọn sản phẩm khác.");
                 continue;
             }
+            
             System.out.println("Tìm thấy: " + hh.getTenSP());
             System.out.println("Giá: " + hh.getdonGia());
-            
+            System.out.println("Còn lại: " + hh.getsoLuong());
             
             double soLuongMua = 0;
             while (true) {
@@ -118,8 +127,12 @@ public class muaHang {
         
         if (hd.getDanhSachSanPham().isEmpty()) {
             System.out.println("Không có sản phẩm nào được mua!");
+            hoaDonDangXuLy = null;
             return;
         }
+        
+        // Lưu hóa đơn đang xử lý
+        hoaDonDangXuLy = hd;
         
         System.out.println("\n" + hd);
         
@@ -128,22 +141,115 @@ public class muaHang {
         
         if (confirm.equalsIgnoreCase("y")) {
             danhSachHoaDon.add(hd);
-            ghiHoaDon(hd);
+            hoaDonDangXuLy = null; // Xóa hóa đơn đang xử lý sau khi thanh toán
             System.out.println("Thanh toán thành công!");
         } else {
-            for (chiTietHoaDon ct : hd.getDanhSachSanPham()) {
-                hangHoa hh = ct.getSanPham();
-                hh.setsoLuong(hh.getsoLuong() + ct.getSoLuong());
-            }
-            System.out.println("Hủy giao dịch.");
+            System.out.println("Hóa đơn được lưu tạm. Bạn có thể quay lại tiếp tục sau!");
         }
     }
     
-    private void ghiHoaDon(hoaDon hd) {
+    private hoaDon taoHoaDonMoi(Scanner sc) {
+        System.out.println("\n=== Thông tin khách hàng ===");
+
+        String id = "";
+        while (true) {
+            System.out.print("Nhập mã khách hàng: ");
+            id = sc.nextLine().trim();
+            if (id.isEmpty()) {
+                System.out.println("ID khách hàng không được để trống!");
+                continue;
+            }
+            break;
+        }
+        
+        String ten = "";
+        while (true) {
+            System.out.print("Nhập tên khách hàng: ");
+            ten = sc.nextLine().trim();
+            if (ten.isEmpty()) {
+                System.out.println("Tên khách hàng không được để trống!");
+                continue;
+            }
+            if (ten.length() < 2) {
+                System.out.println("Tên khách hàng phải có ít nhất 2 ký tự!");
+                continue;
+            }
+            if (!ten.matches("[a-zA-ZÀ-ỹ\\s]+")) {
+                System.out.println("Tên khách hàng chỉ được chứa chữ cái và khoảng trắng!");
+                continue;
+            }
+            break;
+        }
+        
+        String sdt = "";
+        while (true) {
+            System.out.print("Nhập số điện thoại: ");
+            sdt = sc.nextLine().trim();
+            if (sdt.isEmpty()) {
+                System.out.println("SDT không được trống!");
+                continue;
+            }
+            if (!sdt.matches("0\\d{9}")) {
+                System.out.println("SDT phải đúng hình thức (10 số, bắt đầu bằng 0)!");
+                continue;
+            }
+            break;
+        }
+        
+        String email = "";
+        while (true) {
+            System.out.print("Nhập email: ");
+            email = sc.nextLine().trim();
+            if (email.isEmpty()) {
+                System.out.println("Email không được trống!");
+                continue;
+            }
+            if (!email.matches("^[A-Za-z0-9_]+@[A-Za-z0-9.]+\\.[A-Za-z]{2,}$")) {
+                System.out.println("Email không hợp lệ!");
+                System.out.println("Ví dụ: example@gmail.com");
+                continue;
+            }
+            break;
+        }
+        
+        khachHang kh = new khachHang(id, ten, email, sdt);
+
+        String maNV = "";
+        while (true) {
+            System.out.print("Nhập Mã NV phục vụ: ");
+            maNV = sc.nextLine().trim();
+            if (maNV.isEmpty()) {
+                System.out.println("MaNV không được trống!");
+                continue;
+            }
+            break;
+        }
+        
+        nhanVien nv = dsnv.timNhanVien(maNV);
+        if (nv == null) {
+            System.out.println("Không tìm thấy nhân viên có mã: " + maNV);
+            System.out.print("Tiếp tục mà không có nhân viên? (y/n): ");
+            String choice = sc.nextLine().trim();
+            if (!choice.equalsIgnoreCase("y")) {
+                System.out.println("Hủy giao dịch.");
+                return null;
+            }
+        }
+
+        hoaDon hd = new hoaDon();
+        hd.setKhachHang(kh);
+        hd.setNhanVien(nv);
+        
+        return hd;
+    }
+    
+    public void ghiHoaDon() {
         try {
             BufferedWriter fw = new BufferedWriter(new FileWriter("doanoop/hoadon.txt", true));
-            fw.write(hd.toString());
-            fw.write("\n\n");
+            for (hoaDon hd : danhSachHoaDon) {
+                fw.write(hd.toString());
+                fw.write("\n\n");
+            }
             fw.close();
         } catch (Exception e) {
             System.out.println("Lỗi khi ghi hóa đơn!");
@@ -227,14 +333,21 @@ class chiTietHoaDon {
         return sanPham.getdonGia() * soLuong;
     }
     
+    public double tinhThue() {
+        double tienGoc = sanPham.getdonGia() * soLuong;
+        double tienSauThue = tinhTien();
+        return tienSauThue - tienGoc;
+    }
+    
     @Override
     public String toString() {
-        return String.format("%s - %s: %.0f x %.0f = %.0f VND", 
+        return String.format("%s - %s: %.0f x %.0f = %.0f VND (Thuế: %.0f VND)", 
             sanPham.getmaHang(), 
             sanPham.getTenSP(), 
             soLuong, 
             sanPham.getdonGia(), 
-            tinhTien());
+            tinhTien(),
+            tinhThue());
     }
 }
 
@@ -243,7 +356,6 @@ class hoaDon {
     private khachHang khachHang;
     private nhanVien nhanVien;
     private ArrayList<chiTietHoaDon> danhSachSanPham;
-    private String ngayMua;
     
     public hoaDon() {
         this.maHD = "HD" + System.currentTimeMillis();
@@ -252,6 +364,10 @@ class hoaDon {
     
     public void setKhachHang(khachHang kh) {
         this.khachHang = kh;
+    }
+    
+    public khachHang getKhachHang() {
+        return this.khachHang;
     }
     
     public void setNhanVien(nhanVien nv) {
@@ -279,7 +395,6 @@ class hoaDon {
         StringBuilder sb = new StringBuilder();
         sb.append("----HÓA ĐƠN----\n");
         sb.append("Mã hóa đơn: ").append(maHD).append("\n");
-        sb.append("Ngày: ").append(ngayMua).append("\n");
         sb.append("Khách hàng: ").append(khachHang.toString()).append("\n");
         
         if (nhanVien != null) {

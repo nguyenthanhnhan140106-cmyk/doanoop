@@ -1,0 +1,12 @@
+----HÓA ĐƠN----
+Mã hóa đơn: HD1761484458873
+Khách hàng: Khách hàng: nguyen (0906321803)
+Nhân viên: FT005 - Hoàng Thị I
+
+Chi tiết:
+  DT01 - kuuvovlog: 1 x 250000 = 325000 VND (Thuế: 75000 VND)
+  DT09 - Google_Pixel9: 1 x 27000 = 35100 VND (Thuế: 8100 VND)
+
+Tổng cộng: 360100 VND
+---------------
+
