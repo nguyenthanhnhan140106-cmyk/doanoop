@@ -24,12 +24,11 @@ public class DanhSachNhanVien{
                 String ten = arr[1].split(":")[1].trim();
                 String email = arr[2].split(":")[1].trim();
                 String sdt=arr[3].split(":")[1].trim();
-                int soGioLam =(int) Double.parseDouble(arr[4].split(":")[1].trim());
                 nhanVien nv;
                 if (id.toUpperCase().startsWith("PT"))
-                    nv = new nvParttime(id, ten, email , sdt ,soGioLam);
+                    nv = new nvParttime(id, ten, email , sdt);
                 else
-                    nv = new nvFulltime(id, ten, email , sdt ,soGioLam);
+                    nv = new nvFulltime(id, ten, email , sdt);
                 a.add(nv);
                 
             }
@@ -56,35 +55,135 @@ public class DanhSachNhanVien{
 
     public void themDSNhanVien(){
         Scanner sc=new Scanner(System.in);
-        System.out.println("Nếu là nhân viên parttime thì mã nhân viên bắt đầu là PT còn nhân viên fulltime bắt đầu là FT! ");
-        System.out.println("Nhập mã nhân viên: ");
-        String id=sc.nextLine();
+        System.out.println("Nếu là nhân viên part time thì mã nhân viên bắt đầu là PT còn nhân viên fulltime bắt đầu là FT! ");
+        String id="";
+        while (true){
+            System.out.println("Nhập mã nhân viên: ");
+            id = sc.nextLine().trim();
+            if (id.isEmpty() || id == null){
+                System.out.println("Mã nhân viên không được để trống!");
+                continue;
+            }
 
-        System.out.println("Nhập tên nhân viên: ");
-        String ten=sc.nextLine();
+            String manv = id.toUpperCase().trim();
+            if (!manv.startsWith("PT") && !manv.startsWith("FT")) {
+                System.out.println("Lưu ý: Mã nhân viên phải bắt đầu bằng PT (Làm việc Part Time), FT (Làm việc Full Time)");
+                continue;
+            }
 
-        System.out.println("Nhập email: ");
-        String email=sc.nextLine();
+            boolean exists=false;
+            for (nhanVien nv:a){
+                if (nv.getid().equalsIgnoreCase(id)){
+                    exists=true;
+                    break;
+                }
+            }
+            if (exists){
+                System.out.println("Tồn tại mã nhân viên "+id+", Vui lòng nhập lại!");
+                continue;
+            }
+            break;
+        }
 
-        System.out.println("Nhập số điện thoại liên hệ: ");
-        String sdt=sc.nextLine();
+        String ten="";
+        while (true){
+            System.out.println("Nhập tên nhân viên: ");
+            ten = sc.nextLine().trim();
+            if (ten.isEmpty() || ten == null){
+                System.out.println("Tên nhân viên không được để trống!");
+                continue;
+            }
 
-        System.out.println("Nhập số giờ làm việc: ");
-        int soGioLam=sc.nextInt();
+            if (ten.matches(".*\\d.*")) {
+                System.out.println("Tên nhân viên không được chứa số! Vui lòng nhập lại");
+                continue;
+            }
+
+            if (ten.matches(".*\\s{2,}.*")) {
+                System.out.println("Tên nhân viên không được chứa nhiều khoảng trắng liên tiếp!");
+                continue;
+            }
+
+            if (!ten.matches("^[a-zA-ZàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ\\s]+$")) {
+                System.out.println("Tên nhân viên chỉ được chứa chữ cái và khoảng trắng!");
+                continue;
+            }
+
+            String[] words = ten.split("\\s+");
+            boolean validCapitalization = true;
+            for (String word : words) {
+                if (!Character.isUpperCase(word.charAt(0))) {
+                    validCapitalization = false;
+                    break;
+                }
+            }
+            if (!validCapitalization) {
+                System.out.println("Mỗi từ trong tên phải bắt đầu bằng chữ hoa!");
+                continue;
+            }
+            break;
+        }
+
+        String email="";
+        while (true){
+            System.out.println("Nhập email của nhân viên: ");
+            email = sc.nextLine().trim();
+            if (email.isEmpty() || email == null){
+                System.out.println("Email không được để trống!");
+                continue;
+            }
+
+            if (!email.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")) {
+                System.out.println("Email không hợp lệ! Vui lòng nhập lại");
+                continue;
+            }
+            break;
+        }
+
+        String sdt="";
+        while (true){
+            System.out.println("Nhập số điện thoại nhân viên: ");
+            sdt = sc.nextLine().trim();
+            if (sdt.isEmpty() || sdt == null){
+                System.out.println("Số điện thoại không được để trống!");
+                continue;
+            }
+
+            if (sdt.matches(".*\\d.*")) {
+                System.out.println("Số điện thoại không hợp lệ! Vui lòng nhập lại");
+                continue;
+            }
+            break;
+        }
 
         nhanVien nv;
         if (id.toUpperCase().startsWith("PT"))
-            nv = new nvParttime(id, ten, email, sdt, soGioLam);
+            nv = new nvParttime(id, ten, email, sdt);
         else
-            nv = new nvFulltime(id, ten, email, sdt, soGioLam);
+            nv = new nvFulltime(id, ten, email, sdt);
 
         a.add(nv);
         System.out.println("Đã thêm nhân viên mới!");
     }
+
     public void suaDSNhanVien() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập mã nhân viên cần sửa: ");
-        String id = sc.nextLine();
+        String id="";
+        while (true){
+            System.out.println("Nhập mã nhân viên: ");
+            id = sc.nextLine().trim();
+            if (id.isEmpty() || id == null){
+                System.out.println("Mã nhân viên không được để trống!");
+                continue;
+            }
+
+            String manv = id.toUpperCase().trim();
+            if (!manv.startsWith("PT") && !manv.startsWith("FT")) {
+                System.out.println("Lưu ý: Mã nhân viên phải bắt đầu bằng PT (Làm việc Part Time), FT (Làm việc Full Time)");
+                continue;
+            }
+            break;
+        }
 
         nhanVien nv = null;
         for (nhanVien X : a) {
@@ -93,78 +192,543 @@ public class DanhSachNhanVien{
                 break;
             }
         }
-        if (nv == null)
+
+        if (nv == null){
             System.out.println("Mã nhân viên không tồn tại.");
-        else
-            System.out.println(nv);
-        for (int i = 0; i < a.size(); i++) {
-            if (a.get(i).getid().equals(id)) {
-                System.out.println("Nhập tên nhân viên: ");
-                String ten=sc.nextLine();
-
-                System.out.println("Nhập email: ");
-                String email=sc.nextLine();
-
-                System.out.println("Nhập số điện thoại liên hệ: ");
-                String sdt=sc.nextLine();
-
-                System.out.println("Nhập số giờ làm việc: ");
-                int soGioLam=sc.nextInt();
-
-                a.get(i).setten(ten);
-                a.get(i).setemail(email);
-                a.get(i).setsdt(sdt);
-                a.get(i).setsoGioLam(soGioLam);
-
-                System.out.println(" Đã sửa thông tin sản phẩm! ");
-                break;
-            }
+            return;
         }
+
+        System.out.println("\nThông tin nhân viên hiện tại:");
+        System.out.println(nv);
+
+        int chon;
+
+        do {
+            System.out.println("\n========== MENU CHỈNH SỬA ==========");
+            System.out.println("1. Sửa Tên nhân viên");
+            System.out.println("2. Sửa Email");
+            System.out.println("3. Sửa Số điện thoại");
+            System.out.println("4. Sửa Tất cả thông tin");
+            System.out.println("0. Lưu và thoát");
+            System.out.println("====================================");
+            System.out.print("Nhập lựa chọn: ");
+        
+            try {
+                chon = sc.nextInt();
+                sc.nextLine();
+            } catch (Exception e) {
+                System.out.println("Vui lòng nhập số!");
+                sc.nextLine();
+                chon = -1;
+                continue;
+            }
+
+            switch (chon) {
+                case 1:
+                    String ten="";
+                    while (true){
+                        System.out.println("Nhập tên nhân viên: ");
+                        ten = sc.nextLine().trim();
+                        if (ten.isEmpty() || ten == null){
+                            System.out.println("Tên nhân viên không được để trống!");
+                            continue;
+                        }
+
+                        if (ten.matches(".*\\d.*")) {
+                            System.out.println("Tên nhân viên không được chứa số! Vui lòng nhập lại");
+                            continue;
+                        }
+
+                        if (ten.matches(".*\\s{2,}.*")) {
+                            System.out.println("Tên nhân viên không được chứa nhiều khoảng trắng liên tiếp!");
+                            continue;
+                        }
+
+                        if (!ten.matches("^[a-zA-ZàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ\\s]+$")) {
+                            System.out.println("Tên nhân viên chỉ được chứa chữ cái và khoảng trắng!");
+                            continue;
+                        }
+
+                        String[] words = ten.split("\\s+");
+                        boolean validCapitalization = true;
+                        for (String word : words) {
+                            if (!Character.isUpperCase(word.charAt(0))) {
+                                validCapitalization = false;
+                                break;
+                            }
+                        }
+                        if (!validCapitalization) {
+                            System.out.println("Mỗi từ trong tên phải bắt đầu bằng chữ hoa!");
+                            continue;
+                        }
+                        break;
+                    }
+    
+                    nv.setten(ten);
+                    System.out.println("Đã cập nhật tên sản phẩm!");
+                    break;
+                
+                case 2:
+                    String email="";
+                    while (true){
+                        System.out.println("Nhập email của nhân viên: ");
+                        email = sc.nextLine().trim();
+                        if (email.isEmpty() || email == null){
+                            System.out.println("Email không được để trống!");
+                            continue;
+                        }
+
+                        if (!email.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")) {
+                            System.out.println("Email không hợp lệ! Vui lòng nhập lại");
+                            continue;
+                        }
+                        break;
+                    }
+                    nv.setemail(email);
+                    System.out.println("Đã cập nhật email!");
+                    break;
+                
+                case 3:
+                    String sdt="";
+                    while (true){
+                        System.out.println("Nhập số điện thoại nhân viên: ");
+                        sdt = sc.nextLine().trim();
+                        if (sdt.isEmpty() || sdt == null){
+                            System.out.println("Số điện thoại không được để trống!");
+                            continue;
+                        }
+
+                        if (sdt.matches(".*\\d.*")) {
+                            System.out.println("Số điện thoại không hợp lệ! Vui lòng nhập lại");
+                            continue;
+                        }
+                        break;
+                    }
+                    nv.setsdt(sdt);
+                    System.out.println("Đã cập nhật số điện thoại!");
+                    break;
+                
+                case 4:
+                    System.out.println("--- Nhập tất cả thông tin mới ---");
+                
+                    ten="";
+                    while (true){
+                        System.out.println("Nhập tên nhân viên: ");
+                        ten = sc.nextLine().trim();
+                        if (ten.isEmpty() || ten == null){
+                            System.out.println("Tên nhân viên không được để trống!");
+                            continue;
+                        }
+
+                        if (ten.matches(".*\\d.*")) {
+                            System.out.println("Tên nhân viên không được chứa số! Vui lòng nhập lại");
+                            continue;
+                        }
+
+                        if (ten.matches(".*\\s{2,}.*")) {
+                            System.out.println("Tên nhân viên không được chứa nhiều khoảng trắng liên tiếp!");
+                            continue;
+                        }
+
+                        if (!ten.matches("^[a-zA-ZàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ\\s]+$")) {
+                            System.out.println("Tên nhân viên chỉ được chứa chữ cái và khoảng trắng!");
+                            continue;
+                        }
+
+                        String[] words = ten.split("\\s+");
+                        boolean validCapitalization = true;
+                        for (String word : words) {
+                            if (!Character.isUpperCase(word.charAt(0))) {
+                                validCapitalization = false;
+                                break;
+                            }
+                        }
+                        if (!validCapitalization) {
+                            System.out.println("Mỗi từ trong tên phải bắt đầu bằng chữ hoa!");
+                            continue;
+                        }
+                        break;
+                    }
+                
+                    email="";
+                    while (true){
+                        System.out.println("Nhập email của nhân viên: ");
+                        email = sc.nextLine().trim();
+                        if (email.isEmpty() || email == null){
+                            System.out.println("Email không được để trống!");
+                            continue;
+                        }
+
+                        if (!email.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")) {
+                            System.out.println("Email không hợp lệ! Vui lòng nhập lại");
+                            continue;
+                        }
+                        break;
+                    }
+                
+                    sdt="";
+                    while (true){
+                        System.out.println("Nhập số điện thoại nhân viên: ");
+                        sdt = sc.nextLine().trim();
+                        if (sdt.isEmpty() || sdt == null){
+                            System.out.println("Số điện thoại không được để trống!");
+                            continue;
+                        }
+
+                        if (sdt.matches(".*\\d.*")) {
+                            System.out.println("Số điện thoại không hợp lệ! Vui lòng nhập lại");
+                            continue;
+                        }
+                        break;
+                    }
+                
+                    nv.setten(ten);
+                    nv.setemail(email);
+                    nv.setsdt(sdt);
+                
+                    System.out.println("Đã cập nhật tất cả thông tin!");
+                    break;
+                
+                case 0:
+                    System.out.println("Đã lưu các thay đổi!");
+                    System.out.println("\nThông tin sản phẩm sau khi sửa:");
+                    System.out.println(nv);
+                    break;
+                
+                default:
+                    System.out.println("Lựa chọn không hợp lệ!");
+            }
+        
+        } while (chon != 0);
     }
     public void timKiemNhanVien() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Nhập mã sản phẩm cần tiềm: ");
-        String id = sc.nextLine();
+        int chon;
 
-        nhanVien nv = null;
-        for (nhanVien X : a) {
-            if (X.getid().equals(id)) {
-                nv = X;
-                break;
+        do {
+            System.out.println("\n========== MENU TÌM KIẾM ==========");
+            System.out.println("1. Tìm kiếm theo mã nhân viên");
+            System.out.println("2. Tìm kiếm theo tên nhân viên");
+            System.out.println("3. Tìm kiếm theo email");
+            System.out.println("4. Tìm kiếm theo số điện thoại");
+            System.out.println("5. Tìm kiếm theo loại nhân viên (PT/FT)");
+            System.out.println("0. Quay lại");
+            System.out.println("====================================");
+            System.out.print("Nhập lựa chọn: ");
+    
+            try {
+                chon = sc.nextInt();
+                sc.nextLine();
+            } catch (Exception e) {
+                System.out.println("Vui lòng nhập số!");
+                sc.nextLine();
+                chon = -1;
+                continue;
             }
+    
+            ArrayList<nhanVien> ketQuaTimKiem = new ArrayList<>();
+            String tuKhoa = "";
+    
+            switch (chon) {
+                case 1:
+                    while (true){
+                        System.out.println("Nhập mã nhân viên: ");
+                        tuKhoa = sc.nextLine().trim();
+                        if (tuKhoa.isEmpty() || tuKhoa == null){
+                            System.out.println("Mã nhân viên không được để trống!");
+                            continue;
+                        }
+
+                        String manv = tuKhoa.toUpperCase().trim();
+                        if (!manv.startsWith("PT") && !manv.startsWith("FT")) {
+                            System.out.println("Lưu ý: Mã nhân viên phải bắt đầu bằng PT (Làm việc Part Time), FT (Làm việc Full Time)");
+                            continue;
+                        }
+                        break;
+                    }
+
+                    nhanVien nv = null;
+                    
+                    for (nhanVien X : a) {
+                        if (X.getid().equals(tuKhoa)) {
+                            nv = X;
+                            break;
+                        }
+                    }
+
+                    if (nv == null){
+                        System.out.println("Mã nhân viên không tồn tại. Vui lòng nhập lại!");
+                        return;
+                    }
+                    for (nhanVien nv2 : a) {
+                        if (nv2.getid().equalsIgnoreCase(tuKhoa)) {
+                            ketQuaTimKiem.add(nv2);
+                        }
+                    }
+                    break;
+            
+                case 2:
+                    while (true){
+                        System.out.println("Nhập tên nhân viên: ");
+                        tuKhoa = sc.nextLine().trim();
+                        if (tuKhoa.isEmpty() || tuKhoa == null){
+                            System.out.println("Vui lòng không được để trống!");
+                            continue;
+                        }
+
+                        if (tuKhoa.matches(".*\\d.*")) {
+                            System.out.println("Tên sản phẩm không được chứa số! Vui lòng nhập lại");
+                            continue;
+                        }
+
+                        if (tuKhoa.matches(".*\\s{2,}.*")) {
+                            System.out.println("Tên nhân viên không được chứa nhiều khoảng trắng liên tiếp!");
+                            continue;
+                        }
+
+                        if (!tuKhoa.matches("^[a-zA-ZàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ\\s]+$")) {
+                            System.out.println("Tên nhân viên chỉ được chứa chữ cái và khoảng trắng!");
+                            continue;
+                        }
+
+                        String[] words = tuKhoa.split("\\s+");
+                        boolean validCapitalization = true;
+                        for (String word : words) {
+                            if (!Character.isUpperCase(word.charAt(0))) {
+                                validCapitalization = false;
+                                break;
+                            }
+                        }
+                        if (!validCapitalization) {
+                            System.out.println("Mỗi từ trong tên phải bắt đầu bằng chữ hoa!");
+                            continue;
+                        }
+                        break;
+                    }
+
+                    for (nhanVien X : a) {
+                        if (X.getten().toLowerCase().contains(tuKhoa.toLowerCase())) {
+                            ketQuaTimKiem.add(X);
+                        }
+                    }
+                    break;
+            
+                case 3:
+                    while (true){
+                        System.out.println("Nhập email của nhân viên: ");
+                        tuKhoa = sc.nextLine().trim();
+                        if (tuKhoa.isEmpty() || tuKhoa == null){
+                            System.out.println("Email không được để trống!");
+                            continue;
+                        }
+
+                        if (!tuKhoa.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")) {
+                            System.out.println("Email không hợp lệ! Vui lòng nhập lại");
+                            continue;
+                        }
+                        break;
+                    }
+
+                    for (nhanVien X : a) {
+                        if (X.getemail().toLowerCase().contains(tuKhoa.toLowerCase())) {
+                            ketQuaTimKiem.add(X);
+                        }
+                    }
+                    break;
+            
+                case 4:
+                    while (true){
+                        System.out.println("Nhập số điện thoại nhân viên: ");
+                        tuKhoa = sc.nextLine().trim();
+                        if (tuKhoa.isEmpty() || tuKhoa == null){
+                            System.out.println("Số điện thoại không được để trống!");
+                            continue;
+                        }
+
+                        if (!tuKhoa.matches(".*\\d.*")) {
+                            System.out.println("Số điện thoại không hợp lệ! Vui lòng nhập lại");
+                            continue;
+                        }
+                        break;
+                    }
+
+                    for (nhanVien X : a) {
+                        if (X.getsdt().contains(tuKhoa)) {
+                            ketQuaTimKiem.add(X);
+                        }
+                    }
+                    break;
+            
+                case 5:
+                    System.out.print("Nhập loại nhân viên (PT - Part Time / FT - Full Time): ");
+                    tuKhoa = sc.nextLine().trim().toUpperCase();
+                
+                    if (!tuKhoa.equals("PT") && !tuKhoa.equals("FT")) {
+                        System.out.println("Loại nhân viên không hợp lệ! Chỉ nhập PT hoặc FT.");
+                        continue;
+                    }
+                
+                    for (nhanVien X : a) {
+                        if (X.getid().toUpperCase().startsWith(tuKhoa)) {
+                            ketQuaTimKiem.add(X);
+                        }
+                    }
+                    break;
+            
+                case 0:
+                    System.out.println("Thoát tìm kiếm.");
+                    return;
+            
+                default:
+                    System.out.println("Lựa chọn không hợp lệ!");
+                    continue;
+            }
+    
+            if (chon >= 1 && chon <= 5) {
+                if (ketQuaTimKiem.isEmpty()) {
+                    System.out.println("Không tìm thấy nhân viên nào phù hợp!");
+                } else {
+                    System.out.println("\n=== KẾT QUẢ TÌM KIẾM ===");
+                    System.out.println("Tìm thấy " + ketQuaTimKiem.size() + " nhân viên:");
+                for (int i = 0; i < ketQuaTimKiem.size(); i++) {
+                    System.out.println((i + 1) + ". " + ketQuaTimKiem.get(i));
+                    System.out.println("--------------------------------------");
+                }
+            }
+            
+            System.out.print("\nNhấn Enter để tiếp tục...");
+            sc.nextLine();
         }
-        if (nv == null)
-            System.out.println("Mã nhân viên không tồn tại.");
-        else
-            System.out.println(nv);
-    }
+        
+    } while (chon != 0);
+}
+
     public void xoaNhanVien() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nhập mã nhân viên cần xóa: ");
-        String id = sc.nextLine();
-
-        boolean found = false;
-        for (int i = 0; i < a.size(); i++) {
-            if (a.get(i).getid().equals(id)) {
-                System.out.println("Thông tin nhân viên cần xóa:");
-                System.out.println(a.get(i));
-
-                System.out.print("Bạn có chắc muốn xóa nhân viên này ra khỏi danh sách không? (y/n): ");
-                String confirm = sc.nextLine();
-
-                if (confirm.equalsIgnoreCase("y")) {
-                    a.remove(i);
-                    System.out.println(" Đã xóa nhân viên khỏi danh sách!");
-                } else
-                    System.out.println(" Hủy xóa nhân viên.");
-
-                found = true;
-                break;
+        int chon;
+    
+        do {
+            System.out.println("\n========== MENU XÓA ==========");
+            System.out.println("1. Xóa theo mã nhân viên");
+            System.out.println("2. Xóa theo tên nhân viên");
+            System.out.println("3. Xóa theo email");
+            System.out.println("4. Xóa theo số điện thoại");
+            System.out.println("0. Quay lại");
+            System.out.println("==========================================");
+            System.out.print("Nhập lựa chọn: ");
+        
+            try {
+                chon = sc.nextInt();
+                sc.nextLine();
+            } catch (Exception e) {
+                System.out.println("Vui lòng nhập số!");
+                sc.nextLine();
+                chon = -1;
+                continue;
             }
-        }
-        if (!found) {
-            System.out.println(" Không tìm thấy nhân viên có mã: " + id);
-        }
+        
+            ArrayList<nhanVien> ketQuaTimKiem = new ArrayList<>();
+            String tuKhoa = "";
+        
+            switch (chon) {
+                case 1:
+                    System.out.print("Nhập mã nhân viên cần xóa: ");
+                    tuKhoa = sc.nextLine().trim();
+                    for (nhanVien nv : a) {
+                        if (nv.getid().equalsIgnoreCase(tuKhoa)) {
+                            ketQuaTimKiem.add(nv);
+                        }
+                    }
+                    break;
+                
+                case 2:
+                    System.out.print("Nhập tên nhân viên cần xóa: ");
+                    tuKhoa = sc.nextLine().trim();
+                    for (nhanVien nv : a) {
+                        if (nv.getten().toLowerCase().contains(tuKhoa.toLowerCase())) {
+                            ketQuaTimKiem.add(nv);
+                        }
+                    }
+                    break;
+                
+                case 3:
+                    System.out.print("Nhập email nhân viên cần xóa: ");
+                    tuKhoa = sc.nextLine().trim();
+                    for (nhanVien nv : a) {
+                        if (nv.getemail().toLowerCase().contains(tuKhoa.toLowerCase())) {
+                            ketQuaTimKiem.add(nv);
+                        }
+                    }
+                    break;
+                
+                case 4:
+                    System.out.print("Nhập số điện thoại nhân viên cần xóa: ");
+                    tuKhoa = sc.nextLine().trim();
+                    for (nhanVien nv : a) {
+                        if (nv.getsdt().contains(tuKhoa)) {
+                            ketQuaTimKiem.add(nv);
+                        }
+                    }
+                    break;
+                
+                case 0:
+                    System.out.println("Đã hủy thao tác xóa.");
+                    return;
+                
+                default:
+                    System.out.println("Lựa chọn không hợp lệ!");
+                    continue;
+            }
+        
+            if (chon >= 1 && chon <= 4) {
+                if (ketQuaTimKiem.isEmpty()) {
+                    System.out.println("Không tìm thấy nhân viên nào phù hợp!");
+                } else {
+                    System.out.println("\n=== KẾT QUẢ TÌM KIẾM ===");
+                    for (int i = 0; i < ketQuaTimKiem.size(); i++) {
+                        System.out.println((i + 1) + ". " + ketQuaTimKiem.get(i));
+                    }
+                }
+                
+                System.out.print("\nNhập số thứ tự nhân viên cần xóa (0 để hủy): ");
+                int luaChonXoa;
+
+                try {
+                    luaChonXoa = sc.nextInt();
+                    sc.nextLine();
+                } catch (Exception e) {
+                    System.out.println("Lựa chọn không hợp lệ!");
+                    sc.nextLine();
+                    continue;
+                }
+                
+                if (luaChonXoa == 0) {
+                    System.out.println("Đã hủy xóa.");
+                    continue;
+                }
+                
+                if (luaChonXoa < 1 || luaChonXoa > ketQuaTimKiem.size()) {
+                    System.out.println("Số thứ tự không hợp lệ!");
+                    continue;
+                }
+                
+                nhanVien nvCanXoa = ketQuaTimKiem.get(luaChonXoa - 1);
+                System.out.println("\nThông tin nhân viên cần xóa:");
+                System.out.println(nvCanXoa);
+                
+                System.out.print("Bạn có chắc muốn xóa nhân viên này không? (y/n): ");
+                String confirm = sc.nextLine();
+                
+                if (confirm.equalsIgnoreCase("y")) {
+                    a.remove(nvCanXoa);
+                    System.out.println("Đã xóa nhân viên khỏi danh sách!");
+                    return;
+                } else {
+                    System.out.println("Hủy xóa nhân viên.");
+                }
+            }
+            
+        } while (chon != 0);
     }
 
     public void xuatDanhSachNhanVienParttime() {

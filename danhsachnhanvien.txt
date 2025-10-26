@@ -1,50 +1,50 @@
-MãNV: FT001 || Tên: Nguyễn Văn A || Email: nguyenvana@gmail.com || SĐT: 03384746 || SốGiờLàm: 9
-MãNV: PT001 || Tên: Trần Thị B || Email: tranthib@company.vn || SĐT: 09823748 || SốGiờLàm: 5
-MãNV: FT002 || Tên: Lê Văn C || Email: levan.c@outlook.com || SĐT: 0912384756 || SốGiờLàm: 8
-MãNV: PT002 || Tên: Phạm Thị D || Email: phamthid@yahoo.com || SĐT: 0973628193 || SốGiờLàm: 7
-MãNV: FT003 || Tên: Nguyễn Văn E || Email: nguyene@workmail.vn || SĐT: 0909128374 || SốGiờLàm: 10
-MãNV: PT003 || Tên: Nguyễn Văn F || Email: nvf@company.org || SĐT: 0928374627 || SốGiờLàm: 6
-MãNV: FT004 || Tên: Bùi Thị G || Email: buig@edu.vn || SĐT: 0948273645 || SốGiờLàm: 9
-MãNV: PT004 || Tên: Vũ Văn H || Email: vvh@corporate.com || SĐT: 0938273645 || SốGiờLàm: 4
-MãNV: FT005 || Tên: Hoàng Thị I || Email: hoangi@staff.vn || SĐT: 0827364920 || SốGiờLàm: 8
-MãNV: PT005 || Tên: Lý Văn J || Email: lyj@yahoo.co.jp || SĐT: 0817364928 || SốGiờLàm: 6
-MãNV: FT006 || Tên: Đỗ Minh K || Email: domk@company.vn || SĐT: 0863849201 || SốGiờLàm: 10
-MãNV: PT006 || Tên: Nguyễn Hà L || Email: nguyenthal@work.vn || SĐT: 0901827364 || SốGiờLàm: 5
-MãNV: FT007 || Tên: Phan Quốc M || Email: phanm@company.com || SĐT: 0919283746 || SốGiờLàm: 8
-MãNV: PT007 || Tên: Lưu Thị N || Email: luun@outlook.com || SĐT: 0963847261 || SốGiờLàm: 6
-MãNV: FT008 || Tên: Nguyễn Minh O || Email: minho@edu.org || SĐT: 0983746210 || SốGiờLàm: 9
-MãNV: PT008 || Tên: Phạm Hữu P || Email: phamp@yahoo.com || SĐT: 0847382910 || SốGiờLàm: 7
-MãNV: FT009 || Tên: Nguyễn Đức Q || Email: ducq@company.com || SĐT: 0938473621 || SốGiờLàm: 10
-MãNV: PT009 || Tên: Trịnh Hồng R || Email: trinhhr@outlook.vn || SĐT: 0927481627 || SốGiờLàm: 4
-MãNV: FT010 || Tên: Đinh Văn S || Email: dinhs@corporate.vn || SĐT: 0912847364 || SốGiờLàm: 8
-MãNV: PT010 || Tên: Vũ Thị T || Email: vut@company.org || SĐT: 0938472819 || SốGiờLàm: 5
-MãNV: FT011 || Tên: Trần Hoàng U || Email: tranu@edu.vn || SĐT: 0947382910 || SốGiờLàm: 9
-MãNV: PT011 || Tên: Lê Thị V || Email: lev@workmail.com || SĐT: 0974638291 || SốGiờLàm: 6
-MãNV: FT012 || Tên: Nguyễn Quốc W || Email: quocw@company.vn || SĐT: 0901837462 || SốGiờLàm: 10
-MãNV: PT012 || Tên: Trương Văn X || Email: truongx@yahoo.com || SĐT: 0983746217 || SốGiờLàm: 7
-MãNV: FT013 || Tên: Võ Thị Y || Email: vo.y@outlook.com || SĐT: 0918374621 || SốGiờLàm: 9
-MãNV: PT013 || Tên: Nguyễn Văn Z || Email: nguyenvz@company.vn || SĐT: 0847382910 || SốGiờLàm: 5
-MãNV: FT014 || Tên: Phạm Trung A1 || Email: pta1@corporate.vn || SĐT: 0928471620 || SốGiờLàm: 8
-MãNV: PT014 || Tên: Lý Hồng B1 || Email: lyb1@edu.com || SĐT: 0973849201 || SốGiờLàm: 6
-MãNV: FT015 || Tên: Đỗ Mạnh C1 || Email: doc1@company.org || SĐT: 0963849203 || SốGiờLàm: 9
-MãNV: PT015 || Tên: Nguyễn Hồng D1 || Email: nguyend1@yahoo.vn || SĐT: 0901238746 || SốGiờLàm: 4
-MãNV: FT016 || Tên: Trần Hải E1 || Email: trane1@workmail.vn || SĐT: 0938271645 || SốGiờLàm: 10
-MãNV: PT016 || Tên: Lê Văn F1 || Email: levf1@staff.com || SĐT: 0983726419 || SốGiờLàm: 6
-MãNV: FT017 || Tên: Phan Quang G1 || Email: phang1@company.vn || SĐT: 0918273645 || SốGiờLàm: 8
-MãNV: PT017 || Tên: Đinh Tấn H1 || Email: dinhh1@outlook.com || SĐT: 0973648291 || SốGiờLàm: 5
-MãNV: FT018 || Tên: Bùi Thị I1 || Email: buii1@company.vn || SĐT: 0938476210 || SốGiờLàm: 9
-MãNV: PT018 || Tên: Trần Văn J1 || Email: tranvj1@company.org || SĐT: 0919283746 || SốGiờLàm: 6
-MãNV: FT019 || Tên: Lê Thanh K1 || Emaisl: lek1@edu.vn || SĐT: 0908473628 || SốGiờLàm: 10
-MãNV: PT019 || Tên: Phạm Thị L1 || Email: phamtl1@yahoo.com || SĐT: 0928473645 || SốGiờLàm: 7
-MãNV: FT020 || Tên: Nguyễn Văn M1 || Email: nguyenvm1@company.vn || SĐT: 0983746210 || SốGiờLàm: 8
-MãNV: PT020 || Tên: Vũ Văn N1 || Email: vun1@corporate.org || SĐT: 0974638291 || SốGiờLàm: 5
-MãNV: FT021 || Tên: Trần Thị O1 || Email: trano1@outlook.com || SĐT: 0963748210 || SốGiờLàm: 9
-MãNV: PT021 || Tên: Hoàng Hữu P1 || Email: hoangp1@workmail.com || SĐT: 0957382910 || SốGiờLàm: 6
-MãNV: FT022 || Tên: Lê Quốc Q1 || Email: leqq1@company.vn || SĐT: 0948371629 || SốGiờLàm: 10
-MãNV: PT022 || Tên: Đỗ Thanh R1 || Email: dotr1@yahoo.co.uk || SĐT: 0938472637 || SốGiờLàm: 4
-MãNV: FT023 || Tên: Nguyễn Văn S1 || Email: nguyens1@edu.vn || SĐT: 0912837462 || SốGiờLàm: 8
-MãNV: PT023 || Tên: Trương Thị T1 || Email: truongt1@company.org || SĐT: 0928473645 || SốGiờLàm: 7
-MãNV: FT024 || Tên: Võ Quốc U1 || Email: vou1@corporate.vn || SĐT: 0938472619 || SốGiờLàm: 10
-MãNV: PT024 || Tên: Phan Thị V1 || Email: phanv1@outlook.com || SĐT: 0983746210 || SốGiờLàm: 6
-MãNV: FT025 || Tên: Nguyễn Minh W1 || Email: minhw1@company.vn || SĐT: 0974638291 || SốGiờLàm: 9
-MãNV: PT025 || Tên: Đinh Văn X1 || Email: dinhx1@yahoo.com || SĐT: 0901827364 || SốGiờLàm: 5
+MãNV: FT001|| Tên: Nguyễn Văn A|| Email: nguyenvana@gmail.com|| SĐT: 03384746
+MãNV: PT001|| Tên: Trần Thị B|| Email: tranthib@company.vn|| SĐT: 09823748
+MãNV: FT002|| Tên: Lê Văn C|| Email: levan.c@outlook.com|| SĐT: 0912384756
+MãNV: PT002|| Tên: Phạm Thị D|| Email: phamthid@yahoo.com|| SĐT: 0973628193
+MãNV: FT003|| Tên: Nguy?n V�n N|| Email: nguyene@workmail.vn|| SĐT: 0909128374
+MãNV: PT003|| Tên: Nguyễn Văn F|| Email: nvf@company.org|| SĐT: 0928374627
+MãNV: FT004|| Tên: Bùi Thị G|| Email: buig@edu.vn|| SĐT: 0948273645
+MãNV: PT004|| Tên: Vũ Văn H|| Email: vvh@corporate.com|| SĐT: 0938273645
+MãNV: FT005|| Tên: Hoàng Thị I|| Email: hoangi@staff.vn|| SĐT: 0827364920
+MãNV: PT005|| Tên: Lý Văn J|| Email: lyj@yahoo.co.jp|| SĐT: 0817364928
+MãNV: FT006|| Tên: Đỗ Minh K|| Email: domk@company.vn|| SĐT: 0863849201
+MãNV: PT006|| Tên: Nguyễn Hà L|| Email: nguyenthal@work.vn|| SĐT: 0901827364
+MãNV: FT007|| Tên: Phan Quốc M|| Email: phanm@company.com|| SĐT: 0919283746
+MãNV: PT007|| Tên: Lưu Thị N|| Email: luun@outlook.com|| SĐT: 0963847261
+MãNV: FT008|| Tên: Nguyễn Minh O|| Email: minho@edu.org|| SĐT: 0983746210
+MãNV: PT008|| Tên: Phạm Hữu P|| Email: phamp@yahoo.com|| SĐT: 0847382910
+MãNV: FT009|| Tên: Nguyễn Đức Q|| Email: ducq@company.com|| SĐT: 0938473621
+MãNV: PT009|| Tên: Trịnh Hồng R|| Email: trinhhr@outlook.vn|| SĐT: 0927481627
+MãNV: FT010|| Tên: Đinh Văn S|| Email: dinhs@corporate.vn|| SĐT: 0912847364
+MãNV: PT010|| Tên: Vũ Thị T|| Email: vut@company.org|| SĐT: 0938472819
+MãNV: FT011|| Tên: Trần Hoàng U|| Email: tranu@edu.vn|| SĐT: 0947382910
+MãNV: FT012|| Tên: Nguyễn Quốc W|| Email: quocw@company.vn|| SĐT: 0901837462
+MãNV: PT012|| Tên: Trương Văn X|| Email: truongx@yahoo.com|| SĐT: 0983746217
+MãNV: FT013|| Tên: Võ Thị Y|| Email: vo.y@outlook.com|| SĐT: 0918374621
+MãNV: PT013|| Tên: Nguyễn Văn Z|| Email: nguyenvz@company.vn|| SĐT: 0847382910
+MãNV: FT014|| Tên: Phạm Trung A1|| Email: pta1@corporate.vn|| SĐT: 0928471620
+MãNV: PT014|| Tên: Lý Hồng B1|| Email: lyb1@edu.com|| SĐT: 0973849201
+MãNV: FT015|| Tên: Đỗ Mạnh C1|| Email: doc1@company.org|| SĐT: 0963849203
+MãNV: PT015|| Tên: Nguyễn Hồng D1|| Email: nguyend1@yahoo.vn|| SĐT: 0901238746
+MãNV: FT016|| Tên: Trần Hải E1|| Email: trane1@workmail.vn|| SĐT: 0938271645
+MãNV: PT016|| Tên: Lê Văn F1|| Email: levf1@staff.com|| SĐT: 0983726419
+MãNV: FT017|| Tên: Phan Quang G1|| Email: phang1@company.vn|| SĐT: 0918273645
+MãNV: PT017|| Tên: Đinh Tấn H1|| Email: dinhh1@outlook.com|| SĐT: 0973648291
+MãNV: FT018|| Tên: Bùi Thị I1|| Email: buii1@company.vn|| SĐT: 0938476210
+MãNV: PT018|| Tên: Trần Văn J1|| Email: tranvj1@company.org|| SĐT: 0919283746
+MãNV: FT019|| Tên: Lê Thanh K1|| Email: lek1@edu.vn|| SĐT: 0908473628
+MãNV: PT019|| Tên: Phạm Thị L1|| Email: phamtl1@yahoo.com|| SĐT: 0928473645
+MãNV: FT020|| Tên: Nguyễn Văn M1|| Email: nguyenvm1@company.vn|| SĐT: 0983746210
+MãNV: PT020|| Tên: Vũ Văn N1|| Email: vun1@corporate.org|| SĐT: 0974638291
+MãNV: FT021|| Tên: Trần Thị O1|| Email: trano1@outlook.com|| SĐT: 0963748210
+MãNV: PT021|| Tên: Hoàng Hữu P1|| Email: hoangp1@workmail.com|| SĐT: 0957382910
+MãNV: FT022|| Tên: Lê Quốc Q1|| Email: leqq1@company.vn|| SĐT: 0948371629
+MãNV: PT022|| Tên: Đỗ Thanh R1|| Email: dotr1@yahoo.co.uk|| SĐT: 0938472637
+MãNV: FT023|| Tên: Nguyễn Văn S1|| Email: nguyens1@edu.vn|| SĐT: 0912837462
+MãNV: PT023|| Tên: Trương Thị T1|| Email: truongt1@company.org|| SĐT: 0928473645
+MãNV: FT024|| Tên: Võ Quốc U1|| Email: vou1@corporate.vn|| SĐT: 0938472619
+MãNV: PT024|| Tên: Phan Thị V1|| Email: phanv1@outlook.com|| SĐT: 0983746210
+MãNV: FT025|| Tên: Nguyễn Minh W1|| Email: minhw1@company.vn|| SĐT: 0974638291
+MãNV: PT025|| Tên: Đinh Văn X1|| Email: dinhx1@yahoo.com|| SĐT: 0901827364
+MãNV: PT0303|| Tên: fdsfsd|| Email: dsadsahgdsadajkd|| SĐT: lsakdksa

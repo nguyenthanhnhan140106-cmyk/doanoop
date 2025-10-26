@@ -49,3 +49,4 @@ Mã Hàng: DT14|| Tên SP: Honor_Magic7|| Ngày Nhập: 2025-11-26|| Đơn giá:
 Mã Hàng: DT15|| Tên SP: Sony_Xperia1V|| Ngày Nhập: 2025-11-27|| Đơn giá: 28000.0|| Số Lượng: 4.0|| Nơi sản xuất: Nhat
 Mã Hàng: LT16|| Tên SP: Asus_Nitro5|| Ngày Nhập: 2025-11-02|| Đơn giá: 29000.0|| Số Lượng: 4.0|| Nơi sản xuất: My
 Mã Hàng: DT01|| Tên SP: kuuvovlog|| Ngày Nhập: 2025-12-05|| Đơn giá: 250000.0|| Số Lượng: 12.0|| Nơi sản xuất: tphcm
+Mã Hàng: DT002|| Tên SP: dsfsf|| Ngày Nhập: 2006-07-02|| Đơn giá: 32424.0|| Số Lượng: 3.0|| Nơi sản xuất: fdsfds
