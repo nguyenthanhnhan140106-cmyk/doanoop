@@ -65,6 +65,10 @@ public class DanhSachNhanVien{
                 continue;
             }
             String manv = id.toUpperCase().trim();
+            if (!manv.matches("[A-Z0-9]+")){
+                System.out.println("Mã sản phẩm không được có kí tự đặc biệt!");
+                continue;
+            }
             if (!manv.startsWith("PT") && !manv.startsWith("FT")) {
                 System.out.println("Lưu ý: Mã nhân viên phải bắt đầu bằng PT (Part Time), FT (Full Time)");
                 continue;
@@ -96,6 +100,10 @@ public class DanhSachNhanVien{
             }
             if (ten.matches(".*\\s{2,}.*")) {
                 System.out.println("Tên nhân viên không được chứa nhiều khoảng trắng liên tiếp!");
+                continue;
+            }
+            if (!ten.matches("[a-zA-ZÀ-ỹ\\s]+")) {
+                System.out.println("Tên nhân viên chỉ được chứa chữ cái!");
                 continue;
             }
             break;
@@ -131,9 +139,9 @@ public class DanhSachNhanVien{
             break;
         }
 
-
+        id=id.toUpperCase().trim();
         nhanVien nv;
-        if (id.toUpperCase().startsWith("PT"))
+        if (id.startsWith("PT"))
             nv = new nvParttime(id, ten, email, sdt);
         else
             nv = new nvFulltime(id, ten, email, sdt);
@@ -208,8 +216,8 @@ public class DanhSachNhanVien{
                             continue;
                         }
 
-                        if (ten.matches(".*\\s{2,}.*")) {
-                            System.out.println("Tên nhân viên không được chứa nhiều khoảng trắng liên tiếp!");
+                        if (!ten.matches("[a-zA-ZÀ-ỹ\\s]+")) {
+                            System.out.println("Tên nhân viên chỉ được chứa chữ cái!");
                             continue;
                         }break;
                     }
@@ -378,8 +386,13 @@ public class DanhSachNhanVien{
                             System.out.println("Mã nhân viên không được để trống!");
                             continue;
                         }
+                        
 
                         String manv = tuKhoa.toUpperCase().trim();
+                        if (!manv.matches("[A-Z0-9]+")){
+                            System.out.println("Mã sản phẩm không được có kí tự đặc biệt!");
+                            continue;
+                        }
                         if (!manv.startsWith("PT") && !manv.startsWith("FT")) {
                             System.out.println("Lưu ý: Mã nhân viên phải bắt đầu bằng PT (Làm việc Part Time), FT (Làm việc Full Time)");
                             continue;
@@ -422,6 +435,10 @@ public class DanhSachNhanVien{
 
                         if (tuKhoa.matches(".*\\s{2,}.*")) {
                             System.out.println("Tên nhân viên không được chứa nhiều khoảng trắng liên tiếp!");
+                            continue;
+                        }
+                        if (!tuKhoa.matches("[a-zA-ZÀ-ỹ\\s]+")) {
+                            System.out.println("Tên nhân viên chỉ được chứa chữ cái!");
                             continue;
                         }
                         break;
@@ -540,8 +557,26 @@ public class DanhSachNhanVien{
 
             switch (chon) {
                 case 1:
-                    System.out.print("Nhập mã nhân viên cần xóa: ");
-                    tuKhoa = sc.nextLine().trim();
+                    while (true){
+                        System.out.println("Nhập mã nhân viên: ");
+                        tuKhoa = sc.nextLine().trim();
+                        if (tuKhoa.isEmpty()){
+                            System.out.println("Mã nhân viên không được để trống!");
+                            continue;
+                        }
+                        
+
+                        String manv = tuKhoa.toUpperCase().trim();
+                        if (!manv.matches("[A-Z0-9]+")){
+                            System.out.println("Mã sản phẩm không được có kí tự đặc biệt!");
+                            continue;
+                        }
+                        if (!manv.startsWith("PT") && !manv.startsWith("FT")) {
+                            System.out.println("Lưu ý: Mã nhân viên phải bắt đầu bằng PT (Làm việc Part Time), FT (Làm việc Full Time)");
+                            continue;
+                        }
+                        break;
+                    }
                     for (nhanVien nv : a) {
                         if (nv.getid().equalsIgnoreCase(tuKhoa)) {
                             ketQuaTimKiem.add(nv);
@@ -591,7 +626,8 @@ public class DanhSachNhanVien{
             if (chon >= 1 && chon <= 4) {
                 if (ketQuaTimKiem.isEmpty()) {
                     System.out.println("Không tìm thấy nhân viên nào phù hợp!");
-                } else {
+                } 
+                else {
                     System.out.println("\n=== KẾT QUẢ TÌM KIẾM ===");
                     for (int i = 0; i < ketQuaTimKiem.size(); i++) {
                         System.out.println((i + 1) + ". " + ketQuaTimKiem.get(i));

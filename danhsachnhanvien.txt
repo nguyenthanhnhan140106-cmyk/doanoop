@@ -21,6 +21,7 @@ MãNV: PT010 || Tên: Vũ Thị T || Email: vut@company.org || SĐT: 0938472819
 MãNV: FT011 || Tên: Trần Hoàng U || Email: tranu@edu.vn || SĐT: 0947382910
 MãNV: PT011 || Tên: Lê Thị V || Email: lev@workmail.com || SĐT: 0974638291
 MãNV: FT012 || Tên: Nguyễn Quốc W || Email: quocw@company.vn || SĐT: 0901837462
+MãNV: FT036 || Tên: Nguyễn Quốc W || Email: quocl@company.vn || SĐT: 0901837463
 MãNV: PT012 || Tên: Trương Văn X || Email: truongx@yahoo.com || SĐT: 0983746217
 MãNV: FT013 || Tên: Võ Thị Y || Email: voyeu@outlook.com || SĐT: 0918374621
 MãNV: PT013 || Tên: Nguyễn Văn Z || Email: nguyenvz@company.vn || SĐT: 0847382910
@@ -50,7 +51,5 @@ MãNV: PT024 || Tên: Phan Thị V1 || Email: phanv1@outlook.com || SĐT: 098374
 MãNV: FT025 || Tên: Nguyễn Minh W1 || Email: minhw1@company.vn || SĐT: 0974638291
 MãNV: PT025 || Tên: Đinh Văn X1 || Email: dinhx1@yahoo.com || SĐT: 0901827364
 MãNV: FT100 || Tên: nguyen thi b || Email: wtf@gmail.com || SĐT: 0945454556
-MãNV: FT101 || Tên: Nguy?n Th? B�nh || Email: binhgold@gmail.com || SĐT: 0987654321
-MãNV: PT121 || Tên: Nguy?n Th? C || Email: cac@gmail.com || SĐT: 0987654321
 MãNV: FT120 || Tên: Nguy?n Nh?t Anh || Email: anh@gmail.com || SĐT: 0987654123
 MãNV: PT120 || Tên: john doe || Email: vaiconchon@gmail.com || SĐT: 0616161617
