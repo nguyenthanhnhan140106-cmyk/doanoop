@@ -122,6 +122,17 @@
                     System.out.println("Ví dụ: example@gmail.com");
                     continue;
                 }
+                boolean emailExists = false;
+                for (nhanVien nv : a) {
+                    if (nv.getemail().equalsIgnoreCase(email)) {
+                        emailExists = true;
+                        break;
+                    }
+                }
+                if (emailExists) {
+                    System.out.println("Email " + email + " đã tồn tại trong hệ thống! Vui lòng nhập email khác.");
+                    continue;
+                }
                 break;
             }
 
@@ -134,6 +145,17 @@
                 }
                 if (!sdt.matches("0\\d{9}")) {
                     System.out.println("SDT phải đúng hình thức (10 số, bắt đầu bằng 0)!");
+                    continue;
+                }
+                boolean sdtExists = false;
+                for (nhanVien nv : a) {
+                    if (nv.getsdt().equals(sdt)) {
+                        sdtExists = true;
+                        break;
+                    }
+                }
+                if (sdtExists) {
+                    System.out.println("Số điện thoại " + sdt + " đã tồn tại trong hệ thống! Vui lòng nhập số khác.");
                     continue;
                 }
                 break;
@@ -196,7 +218,7 @@
                     chon = sc.nextInt();
                     sc.nextLine();
                 } catch (Exception e) {
-                    System.out.println("Vui lòng nhập số!");
+                    System.out.println("Vui lòng nhập số (0-4)!");
                     sc.nextLine();
                     chon = -1;
                     continue;
@@ -390,7 +412,7 @@
                     chon = sc.nextInt();
                     sc.nextLine();
                 } catch (Exception e) {
-                    System.out.println("Vui lòng nhập số!");
+                    System.out.println("Vui lòng nhập số (0-5)!");
                     sc.nextLine();
                     chon = -1;
                     continue;
@@ -423,9 +445,9 @@
                         }
 
                         nhanVien nv = null;
-
+                        tuKhoa = tuKhoa.toUpperCase(); 
                         for (nhanVien X : a) {
-                            if (X.getid().equals(tuKhoa)) {
+                            if (X.getid().equalsIgnoreCase(tuKhoa)) {
                                 nv = X;
                                 break;
                             }
@@ -536,6 +558,7 @@
                 if (chon >= 1 && chon <= 5) {
                     if (ketQuaTimKiem.isEmpty()) {
                         System.out.println("Không tìm thấy nhân viên nào phù hợp!");
+                        continue;
                     } else {
                         System.out.println("\n=== KẾT QUẢ TÌM KIẾM ===");
                         System.out.println("Tìm thấy " + ketQuaTimKiem.size() + " nhân viên:");
@@ -568,7 +591,7 @@
                     chon = sc.nextInt();
                     sc.nextLine();
                 } catch (Exception e) {
-                    System.out.println("Vui lòng nhập số!");
+                    System.out.println("Vui lòng nhập số (0-4)!");
                     sc.nextLine();
                     chon = -1;
                     continue;
@@ -686,6 +709,7 @@
                 if (chon >= 1 && chon <= 4) {
                     if (ketQuaTimKiem.isEmpty()) {
                         System.out.println("Không tìm thấy nhân viên nào phù hợp!");
+                        continue;
                     } 
                     else {
                         System.out.println("\n=== KẾT QUẢ TÌM KIẾM ===");

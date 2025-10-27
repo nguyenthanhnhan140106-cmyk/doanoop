@@ -31,7 +31,7 @@ public class quanlyChucNang implements chucNang{
                 chon = sc.nextInt();
                 sc.nextLine();
             } catch (Exception e) {
-                System.out.println("Vui lòng nhập số!");
+                System.out.println("Vui lòng nhập số (0-4)!");
                 sc.nextLine(); 
                 chon = -1; 
                 continue;
@@ -79,7 +79,7 @@ public class quanlyChucNang implements chucNang{
                 lc1 = sc.nextInt();
                 sc.nextLine();
             } catch (Exception e) {
-                System.out.println("Vui lòng nhập số!");
+                System.out.println("Vui lòng nhập số (0-5)!");
                 sc.nextLine();
                 lc1 = -1;
                 continue;
@@ -128,7 +128,7 @@ public class quanlyChucNang implements chucNang{
                 lc2 = sc.nextInt();
                 sc.nextLine();
             } catch (Exception e) {
-                System.out.println("Vui lòng nhập số!");
+                System.out.println("Vui lòng nhập số (0-6)!");
                 sc.nextLine();
                 lc2 = -1;
                 continue;
@@ -178,7 +178,7 @@ public class quanlyChucNang implements chucNang{
                 xem = sc.nextInt();
                 sc.nextLine();
             } catch (Exception e) {
-                System.out.println("Vui lòng nhập số!");
+                System.out.println("Vui lòng nhập số (0-4)!");
                 sc.nextLine();
                 xem = -1;
                 continue;
@@ -221,7 +221,7 @@ public class quanlyChucNang implements chucNang{
                 xemNV = sc.nextInt();
                 sc.nextLine();
             } catch (Exception e) {
-                System.out.println("Vui lòng nhập số!");
+                System.out.println("Vui lòng nhập số (0-3)!");
                 sc.nextLine();
                 xemNV = -1;
                 continue;

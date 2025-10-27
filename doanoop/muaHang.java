@@ -45,7 +45,7 @@
                 }
 
                 
-                if (choice.equalsIgnoreCase("y")) {
+                if (choice.equalsIgnoreCase("y")) { 
                     hd = hoaDonDangXuLy; // old receipt
                     System.out.println("Tiếp tục mua hàng...");
                 } else {

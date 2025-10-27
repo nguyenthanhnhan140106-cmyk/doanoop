@@ -177,15 +177,18 @@ public class DanhSachHangHoa{
             try {
                 System.out.print("Nhập số lượng sản phẩm: ");
                 String input = sc.nextLine().trim();
-                soluong = Double.parseDouble(input);
                 if (input.isEmpty()){
                     System.out.println("Số lượng không được trống");
                     continue;
                 }
+                soluong = Double.parseDouble(input);
                 
-                
-                if (soluong <= 0) {
-                    System.out.println("Số lượng phải lớn hơn 0!");
+                if (soluong < 0) {
+                    System.out.println("Số lượng phải lớn hơn hoặc bằng 0!");
+                    continue;
+                }
+                if (soluong != Math.floor(soluong)) {
+                    System.out.println("Số lượng phải là số nguyên (không chứa phần thập phân)!");
                     continue;
                 }
                 break; 
@@ -199,6 +202,10 @@ public class DanhSachHangHoa{
             nsx=sc.nextLine().trim();
             if (nsx.isEmpty()){
                 System.out.println("Không được trống nơi quốc gia sản xuất");
+                continue;
+            }
+            if (nsx.contains(" ")) {
+                System.out.println("Quốc gia không chứa dấu cách!");
                 continue;
             }
             if (!nsx.matches("[A-Za-z]+")){
@@ -271,7 +278,7 @@ public class DanhSachHangHoa{
                 chon = sc.nextInt();
                 sc.nextLine();
             }catch (Exception e) {
-                System.out.println("Vui lòng nhập số!");
+                System.out.println("Vui lòng nhập số (0-6)!");
                 sc.nextLine();
                 chon = -1;
                 continue;
@@ -342,7 +349,6 @@ public class DanhSachHangHoa{
                         try {
                             System.out.println("Nhập số lượng sản phẩm: ");
                             String input = sc.nextLine().trim();
-                            soLuong = Double.parseDouble(input);
 
                             if (input.isEmpty() || input == null){
                                 System.out.println("Đơn giá sản phẩm không được để trống!");
@@ -351,8 +357,12 @@ public class DanhSachHangHoa{
 
                             soLuong = Double.parseDouble(input);
 
-                            if (soLuong <= 0) {
-                                System.out.println("Số lượng phải lớn hơn 0!");
+                            if (soLuong < 0) {
+                                System.out.println("Số lượng phải lớn hơn hoặc bằng 0!");
+                                continue;
+                            }
+                            if (soLuong != Math.floor(soLuong)) {
+                                System.out.println("Số lượng phải là số nguyên (không chứa phần thập phân)!");
                                 continue;
                             }
                             break;
@@ -372,6 +382,10 @@ public class DanhSachHangHoa{
                         nsx = sc.nextLine().trim();
                         if (nsx.isEmpty() || nsx == null){
                             System.out.println("Nơi sản xuất không được để trống! Vui lòng nhập lại.");
+                            continue;
+                        }
+                        if (nsx.contains(" ")) {
+                            System.out.println("Quốc gia không chứa dấu cách!");
                             continue;
                         }
                         break;
@@ -448,8 +462,12 @@ public class DanhSachHangHoa{
 
                             soLuong = Double.parseDouble(input);
 
-                            if (soLuong <= 0) {
-                                System.out.println("Số lượng phải lớn hơn 0!");
+                            if (soLuong < 0) {
+                                System.out.println("Số lượng phải lớn hơn hoặc bằng 0!");
+                                continue;
+                            }
+                            if (soLuong != Math.floor(soLuong)) {
+                                System.out.println("Số lượng phải là số nguyên (không chứa phần thập phân)!");
                                 continue;
                             }
                             break;
@@ -465,6 +483,10 @@ public class DanhSachHangHoa{
                         nsx = sc.nextLine().trim();
                         if (nsx.isEmpty() || nsx == null){
                             System.out.println("Nơi sản xuất không được để trống! Vui lòng nhập lại.");
+                            continue;
+                        }
+                        if (nsx.contains(" ")) {
+                            System.out.println("Quốc gia không chứa dấu cách!");
                             continue;
                         }
                         break;
@@ -515,7 +537,7 @@ public class DanhSachHangHoa{
                 chon = sc.nextInt();
                 sc.nextLine();
             } catch (Exception e) {
-                System.out.println("Vui lòng nhập số!");
+                System.out.println("Vui lòng nhập số (0-6)!");
                 sc.nextLine();
                 chon = -1;
                 continue;
@@ -547,7 +569,7 @@ public class DanhSachHangHoa{
                     hangHoa hh = null;
 
                     for (hangHoa X : a) {
-                        if (X.getmaHang().equals(tuKhoa)) {
+                        if (X.getmaHang().equalsIgnoreCase(tuKhoa)) {
                             hh=X;
                             break;
                         }
@@ -743,7 +765,7 @@ public class DanhSachHangHoa{
                 chon = sc.nextInt();
                 sc.nextLine();
             } catch (Exception e) {
-                System.out.println("Vui lòng nhập số!");
+                System.out.println("Vui lòng nhập số (0-5)!");
                 sc.nextLine();
                 chon = -1;
                 continue;
@@ -947,7 +969,7 @@ public class DanhSachHangHoa{
     public void xuatDanhSachLoa() {
         System.out.println(" danh sách loa: ");
         for (hangHoa X : a) {
-            if (!(X instanceof dienThoai) && !(X instanceof lapTop))
+            if (X instanceof Loa)
                 System.out.println(X);
         }
     }
