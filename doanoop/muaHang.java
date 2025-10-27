@@ -36,19 +36,31 @@
                 System.out.println("\n=== Bạn có hóa đơn chưa hoàn thành ===");
                 System.out.println("Khách hàng: " + hoaDonDangXuLy.getKhachHang().toString());
                 System.out.println("Số sản phẩm trong giỏ: " + hoaDonDangXuLy.getDanhSachSanPham().size());
-                System.out.print("Tiếp tục mua hàng với hóa đơn này? (y/n): ");
-                String choice = sc.nextLine().trim();
+                String choice = "";
+                while (true) {
+                    System.out.print("Tiếp tục mua hàng với hóa đơn này? (y/n): ");
+                    choice = sc.nextLine().trim().toLowerCase();
+                    if (choice.equals("y") || choice.equals("n")) break;
+                    System.out.println("Vui lòng chỉ nhập 'y' hoặc 'n'!");
+                }
+
                 
                 if (choice.equalsIgnoreCase("y")) {
                     hd = hoaDonDangXuLy; // old receipt
                     System.out.println("Tiếp tục mua hàng...");
                 } else {
-                    System.out.print("Hủy hóa đơn cũ và tạo mới? (y/n): ");
-                    String confirm = sc.nextLine().trim();
-                    if (!confirm.equalsIgnoreCase("y")) {
+                    String confirm = "";
+                    while (true) {
+                        System.out.print("Hủy hóa đơn cũ và tạo mới? (y/n): ");
+                        confirm = sc.nextLine().trim().toLowerCase();
+                        if (confirm.equals("y") || confirm.equals("n")) break;
+                        System.out.println("Vui lòng chỉ nhập 'y' hoặc 'n'!");
+                    }
+                    if (!confirm.equals("y")) {
                         System.out.println("Quay lại menu...");
                         return;
                     }
+
                     for (chiTietHoaDon ct : hoaDonDangXuLy.getDanhSachSanPham()) {
                         hangHoa hh = ct.getSanPham();
                         hh.setsoLuong(hh.getsoLuong() + ct.getSoLuong());
@@ -78,7 +90,10 @@
                     System.out.println("Mã sản phẩm không được để trống!");
                     continue;
                 }
-                
+                if (!maSP.startsWith("DT") && !maSP.startsWith("LT") && !maSP.startsWith("LO")){
+                    System.out.println("Mã phải là DT, LT hoặc LO!");
+                    continue;
+                }
                 hangHoa hh = dshh.timKiemMa(maSP);
                 
                 if (hh == null) {
@@ -96,20 +111,22 @@
                 System.out.println("Giá: " + hh.getdonGia());
                 System.out.println("Còn lại: " + hh.getsoLuong());
                 
-                double soLuongMua = 0;
+                int soLuongMua = 0;
                 while (true) {
                     System.out.print("Nhập số lượng mua: ");
                     try {
                         String input = sc.nextLine().trim();
-                        soLuongMua = Double.parseDouble(input);
-                        
+                        soLuongMua = Integer.parseInt(input);
+                        if (input.isEmpty()) {
+                            System.out.println("Số lượng không được để trống!");
+                            continue;
+                        }
                         if (soLuongMua <= 0) {
                             System.out.println("Số lượng phải lớn hơn 0!");
                             continue;
                         }
-                        
                         if (soLuongMua > hh.getsoLuong()) {
-                            System.out.println("Không đủ hàng! Chỉ còn: " + hh.getsoLuong());
+                            System.out.println("Không đủ hàng! Chỉ còn: " + (int)hh.getsoLuong());
                             continue;
                         }
                         
@@ -136,15 +153,20 @@
             
             System.out.println("\n" + hd);
             
-            System.out.print("\nXác nhận thanh toán? (y/n): ");
-            String confirm = sc.nextLine().trim();
-            
-            if (confirm.equalsIgnoreCase("y")) {
+            String confirm = "";
+            while (true) {
+                System.out.print("\nXác nhận thanh toán? (y/n): ");
+                confirm = sc.nextLine().trim().toLowerCase();
+                if (confirm.equals("y") || confirm.equals("n")) break;
+                System.out.println("Vui lòng chỉ nhập 'y' hoặc 'n'!");
+            }
+
+            if (confirm.equals("y")) {
                 danhSachHoaDon.add(hd);
-                hoaDonDangXuLy = null; // Xóa hóa đơn đang xử lý sau khi thanh toán
+                hoaDonDangXuLy = null;
                 System.out.println("Thanh toán thành công!");
             } else {
-                System.out.println("Hóa đơn được lưu tạm. Bạn có thể quay lại tiếp tục sau!");
+                System.out.println("Hóa đơn được lưu tạm!");
             }
         }
         
@@ -228,9 +250,14 @@
             nhanVien nv = dsnv.timNhanVien(maNV);
             if (nv == null) {
                 System.out.println("Không tìm thấy nhân viên có mã: " + maNV);
-                System.out.print("Tiếp tục mà không có nhân viên? (y/n): ");
-                String choice = sc.nextLine().trim();
-                if (!choice.equalsIgnoreCase("y")) {
+                String choice = "";
+                while (true) {
+                    System.out.print("Tiếp tục mà không có nhân viên? (y/n): ");
+                    choice = sc.nextLine().trim().toLowerCase();
+                    if (choice.equals("y") || choice.equals("n")) break;
+                    System.out.println("Vui lòng chỉ nhập 'y' hoặc 'n'!");
+                }
+                if (!choice.equals("y")) {
                     System.out.println("Hủy giao dịch.");
                     return null;
                 }
@@ -347,13 +374,18 @@
         
         @Override
         public String toString() {
-            return String.format("%s - %s: %.0f x %.0f = %.0f VND (Thuế: %.0f VND)", 
+                double tienGoc = sanPham.getdonGia() * soLuong;
+        
+                return String.format("%s - %s: %.0f x %.0f = %.0f VND\n" +
+                        "     Thuế: %.0f VND\n" +
+                        "     Tổng sau thuế: %.0f VND", 
                 sanPham.getmaHang(), 
                 sanPham.getTenSP(), 
                 soLuong, 
                 sanPham.getdonGia(), 
-                tinhTien(),
-                tinhThue());
+                tienGoc,
+                tinhThue(),
+                tinhTien());
         }
     }
 
@@ -414,8 +446,12 @@
                 sb.append("  ").append(ct.toString()).append("\n");
             }
             
-            sb.append("\nTổng cộng: ").append(String.format("%.0f", tinhTongTien())).append(" VND");
-            sb.append("\n---------------");
+            double tongThue=0;
+            for (chiTietHoaDon ct : danhSachSanPham) {
+                tongThue += ct.tinhThue();
+            }
+            sb.append("Tổng thuế: ").append(String.format("%.0f", tongThue)).append(" VND\n");
+            sb.append("TỔNG THANH TOÁN: ").append(String.format("%.0f", tinhTongTien())).append(" VND\n");
             
             return sb.toString();
         }

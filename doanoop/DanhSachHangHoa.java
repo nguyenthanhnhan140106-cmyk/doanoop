@@ -724,61 +724,207 @@ public class DanhSachHangHoa{
 
         } while(chon!=0);
     }
-    public void xoaSanPham() {
+        public void xoaSanPham() {
         Scanner sc = new Scanner(System.in);
-        
-        String maHang ="";
-        while (true){
-            System.out.println("Nhập mã sản phẩm: ");
-            maHang = sc.nextLine().trim();
-            if (maHang.isEmpty() || maHang == null){
-                System.out.println("Mã sản phẩm không được để trống!");
+        int chon;
+
+        do {
+            System.out.println("\n========== MENU XÓA ==========");
+            System.out.println("1. Xóa theo mã sản phẩm");
+            System.out.println("2. Xóa theo tên sản phẩm");
+            System.out.println("3. Xóa theo ngày nhập");
+            System.out.println("4. Xóa theo đơn giá");
+            System.out.println("5. Xóa theo nơi sản xuất");
+            System.out.println("0. Quay lại");
+            System.out.println("==========================================");
+            System.out.print("Nhập lựa chọn: ");
+
+            try {
+                chon = sc.nextInt();
+                sc.nextLine();
+            } catch (Exception e) {
+                System.out.println("Vui lòng nhập số!");
+                sc.nextLine();
+                chon = -1;
                 continue;
             }
 
-            String ma = maHang.toUpperCase().trim();
-            if (!ma.startsWith("DT") && !ma.startsWith("LT") && !ma.startsWith("LO")) {
-                System.out.println("Lưu ý: Mã hàng phải bắt đầu bằng DT (Điện thoại), LT (Laptop), hoặc LO (Loa)!");
-                continue;
-            }
+            ArrayList<hangHoa> ketQuaTimKiem = new ArrayList<>();
+            String tuKhoa = "";
 
-            hangHoa hh = null;
-            for (hangHoa x:a){
-                if (x.getmaHang().equalsIgnoreCase(maHang)){
-                    hh = x;
+            switch (chon) {
+                case 1:
+                    while (true) {
+                        System.out.print("Nhập mã sản phẩm: ");
+                        tuKhoa = sc.nextLine().trim();
+                        if (tuKhoa.isEmpty()) {
+                            System.out.println("Mã sản phẩm không được để trống!");
+                            continue;
+                        }
+
+                        String ma = tuKhoa.toUpperCase().trim();
+                        if (!ma.matches("[A-Z0-9]+")) {
+                            System.out.println("Mã sản phẩm không được có kí tự đặc biệt!");
+                            continue;
+                        }
+                        if (!ma.startsWith("DT") && !ma.startsWith("LT") && !ma.startsWith("LO")) {
+                            System.out.println("Lưu ý: Mã hàng phải bắt đầu bằng DT (Điện thoại), LT (Laptop), hoặc LO (Loa)!");
+                            continue;
+                        }
+                        break;
+                    }
+                    for (hangHoa hh : a) {
+                        if (hh.getmaHang().equalsIgnoreCase(tuKhoa)) {
+                            ketQuaTimKiem.add(hh);
+                        }
+                    }
                     break;
+
+                case 2:
+                    while (true) {
+                        System.out.print("Nhập tên sản phẩm cần xóa: ");
+                        tuKhoa = sc.nextLine().trim();
+                        if (tuKhoa.isEmpty()) {
+                            System.out.println("Tên sản phẩm không được để trống!");
+                            continue;
+                        }
+                        break;
+                    }
+                    for (hangHoa hh : a) {
+                        if (hh.getTenSP().toLowerCase().contains(tuKhoa.toLowerCase())) {
+                            ketQuaTimKiem.add(hh);
+                        }
+                    }
+                    break;
+
+                case 3:
+                    while (true) {
+                        System.out.print("Nhập ngày nhập (YYYY-MM-DD): ");
+                        tuKhoa = sc.nextLine().trim();
+                        if (tuKhoa.isEmpty()) {
+                            System.out.println("Ngày nhập không được để trống!");
+                            continue;
+                        }
+                        if (checkDate(tuKhoa)) {
+                            break;
+                        } else {
+                            System.out.println("Ngày nhập không hợp lệ!");
+                        }
+                    }
+                    for (hangHoa hh : a) {
+                        if (hh.getngayNhap().equals(tuKhoa)) {
+                            ketQuaTimKiem.add(hh);
+                        }
+                    }
+                    break;
+
+                case 4:
+                    double donGia = 0;
+                    while (true) {
+                        try {
+                            System.out.print("Nhập đơn giá: ");
+                            String input = sc.nextLine().trim();
+                            if (input.isEmpty()) {
+                                System.out.println("Đơn giá không được để trống!");
+                                continue;
+                            }
+                            donGia = Double.parseDouble(input);
+                            if (donGia <= 0) {
+                                System.out.println("Đơn giá phải lớn hơn 0!");
+                                continue;
+                            }
+                            break;
+                        } catch (NumberFormatException e) {
+                            System.out.println("Đơn giá phải là số!");
+                        }
+                    }
+                    for (hangHoa hh : a) {
+                        if (hh.getdonGia() == donGia) {
+                            ketQuaTimKiem.add(hh);
+                        }
+                    }
+                    break;
+
+                case 5:
+                    while (true) {
+                        System.out.print("Nhập nơi sản xuất: ");
+                        tuKhoa = sc.nextLine().trim();
+                        if (tuKhoa.isEmpty()) {
+                            System.out.println("Nơi sản xuất không được để trống!");
+                            continue;
+                        }
+                        break;
+                    }
+                    for (hangHoa hh : a) {
+                        if (hh.getnsx().toLowerCase().contains(tuKhoa.toLowerCase())) {
+                            ketQuaTimKiem.add(hh);
+                        }
+                    }
+                    break;
+
+                case 0:
+                    System.out.println("Đã hủy thao tác xóa.");
+                    return;
+
+                default:
+                    System.out.println("Lựa chọn không hợp lệ!");
+                    continue;
+            }
+
+            if (chon >= 1 && chon <= 5) {
+                if (ketQuaTimKiem.isEmpty()) {
+                    System.out.println("Không tìm thấy sản phẩm nào phù hợp!");
+                } else {
+                    System.out.println("\n=== KẾT QUẢ TÌM KIẾM ===");
+                    for (int i = 0; i < ketQuaTimKiem.size(); i++) {
+                        System.out.println((i + 1) + ". " + ketQuaTimKiem.get(i));
+                    }
+
+                    System.out.print("\nNhập số thứ tự sản phẩm cần xóa (0 để hủy): ");
+                    int luaChonXoa;
+                    try {
+                        luaChonXoa = sc.nextInt();
+                        sc.nextLine();
+                    } catch (Exception e) {
+                        System.out.println("Lựa chọn không hợp lệ!");
+                        sc.nextLine();
+                        continue;
+                    }
+
+                    if (luaChonXoa == 0) {
+                        System.out.println("Đã hủy xóa.");
+                        continue;
+                    }
+
+                    if (luaChonXoa < 1 || luaChonXoa > ketQuaTimKiem.size()) {
+                        System.out.println("Số thứ tự không hợp lệ!");
+                        continue;
+                    }
+
+                    hangHoa hhCanXoa = ketQuaTimKiem.get(luaChonXoa - 1);
+                    System.out.println("\nThông tin sản phẩm cần xóa:");
+                    System.out.println(hhCanXoa);
+                    
+                    String confirm="";
+                    while(true){
+                        System.out.print("Bạn có chắc muốn xóa sản phẩm này không? (y/n): ");
+                        confirm = sc.nextLine().trim().toLowerCase();
+                        if (confirm.equals("y") || confirm.equals("n")) {
+                            break;
+                        } else {
+                            System.out.println("Vui lòng chỉ nhập 'y' hoặc 'n'!");
+                        }
+                    }
+                    if (confirm.equals("y")) {
+                        a.remove(hhCanXoa);
+                        System.out.println("Đã xóa sản phẩm khỏi danh sách!");
+                        return;
+                    } else {
+                        System.out.println("Hủy xóa sản phẩm.");
+                    }
                 }
             }
-
-            if (hh == null){
-                System.out.println("Không tồn tại mã sản phẩm "+maHang+", Vui lòng nhập lại!");
-                return;          
-            }
-            break;
-        }
-
-        boolean found = false;
-        for (int i = 0; i < a.size(); i++) {
-            if (a.get(i).getmaHang().equalsIgnoreCase(maHang)) {
-                System.out.println("Thông tin sản phẩm cần xóa:");
-                System.out.println(a.get(i));
-
-                System.out.print("Bạn có chắc muốn xóa sản phẩm này không? (y/n): ");
-                String confirm = sc.nextLine();
-
-                if (confirm.equalsIgnoreCase("y")) {
-                    a.remove(i);
-                    System.out.println(" Đã xóa sản phẩm khỏi danh sách!");
-                } else
-                    System.out.println(" Hủy xóa sản phẩm.");
-
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
-            System.out.println(" Không tìm thấy sản phẩm có mã: " + maHang);
-        }
+        } while (chon != 0);
     }
 
     public void xuatDanhSachDienThoai() {
