@@ -120,6 +120,7 @@ public class quanlyChucNang implements chucNang{
             System.out.println("3. Sửa nhân viên");
             System.out.println("4. Tìm kiếm nhân viên");
             System.out.println("5. Xem danh sách nhân viên");
+            System.out.println("6. Thống kê nhân viên");
             System.out.println("0. Quay lại");
             System.out.print("Chọn: ");
             
@@ -141,13 +142,16 @@ public class quanlyChucNang implements chucNang{
                     xoaNhanVien();
                     break;
                 case 3:
-                    suaDSNhanVien();b.ghiFile("doanoop/danhsachnhanvien.txt");
+                    suaDSNhanVien();
                     break;
                 case 4:
                     timKiemNhanVien();
                     break;
                 case 5:
                     menuPrintNhanVien();
+                    break;
+                case 6:
+                    b.thongKe();
                     break;
                 case 0:
                     System.out.println("Quay lại menu chính...");

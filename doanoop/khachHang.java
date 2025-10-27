@@ -7,6 +7,6 @@ public class khachHang extends conNguoi{
     }
     @Override
     public String toString() {
-        return "Khách hàng: " + ten + " (" + sdt + ")";
+        return "Khách hàng: " + ten + " (" + sdt + "||" +email + ")";
     }
 }
